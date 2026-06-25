@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="theme-color" content="#1a120b" />
+  <title>Circling Session — Plan</title>
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="app-header">
+    <div class="header-inner">
+      <h1 class="app-title">Circling Session</h1>
+      <div class="clock" id="clock" aria-live="off">--:--</div>
+    </div>
+    <nav class="toc" id="toc" aria-label="Jump to section"></nav>
+  </header>
+
+  <main class="content" id="content">
+    <p class="loading">Loading the plan…</p>
+  </main>
+
+  <!-- Bottom control dock -->
+  <div class="dock" id="dock">
+    <button class="dock-btn" data-panel="timer" aria-expanded="false">
+      <span class="dock-icon">⏱</span><span class="dock-label">Timer</span>
+    </button>
+    <button class="dock-btn" data-panel="music" aria-expanded="false">
+      <span class="dock-icon">♪</span><span class="dock-label">Music</span>
+    </button>
+    <button class="dock-btn" id="topBtn">
+      <span class="dock-icon">↑</span><span class="dock-label">Top</span>
+    </button>
+  </div>
+
+  <!-- Timer panel -->
+  <section class="panel" id="panel-timer" aria-hidden="true">
+    <div class="panel-head">
+      <h2>Focus Timer</h2>
+      <button class="panel-close" data-close="timer" aria-label="Close">✕</button>
+    </div>
+    <div class="timer-display" id="timerDisplay">15:00</div>
+    <div class="timer-mode">
+      <button class="seg active" id="modeCountdown">Countdown</button>
+      <button class="seg" id="modeStopwatch">Stopwatch</button>
+    </div>
+    <div class="timer-presets" id="presets">
+      <button data-min="15" class="preset active">15 min · focus</button>
+      <button data-min="5" class="preset">5</button>
+      <button data-min="10" class="preset">10</button>
+      <button data-min="20" class="preset">20</button>
+    </div>
+    <div class="timer-adjust">
+      <button id="minusMin">−1 min</button>
+      <button id="plusMin">+1 min</button>
+    </div>
+    <div class="timer-controls">
+      <button class="big-btn primary" id="timerStart">Start</button>
+      <button class="big-btn" id="timerReset">Reset</button>
+    </div>
+  </section>
+
+  <!-- Music panel -->
+  <section class="panel" id="panel-music" aria-hidden="true">
+    <div class="panel-head">
+      <h2>Music</h2>
+      <button class="panel-close" data-close="music" aria-label="Close">✕</button>
+    </div>
+    <div class="track-name" id="trackName">Nicola Cruz — Cumbia del Olvido</div>
+    <div id="player"></div>
+    <div class="seek-row">
+      <span class="seek-time" id="curTime">0:00</span>
+      <input type="range" id="seek" min="0" max="100" value="0" step="0.1" aria-label="Seek" />
+      <span class="seek-time" id="durTime">0:00</span>
+    </div>
+    <div class="music-controls">
+      <button class="big-btn primary" id="playBtn">▶ Play</button>
+      <button class="big-btn" id="stopBtn">■ Stop</button>
+    </div>
+    <div class="vol-row">
+      <span class="vol-icon">🔊</span>
+      <input type="range" id="vol" min="0" max="100" value="80" aria-label="Volume" />
+    </div>
+    <details class="track-swap">
+      <summary>Change track</summary>
+      <div class="swap-row">
+        <input type="text" id="ytInput" placeholder="YouTube URL or video ID" />
+        <button id="ytLoad">Load</button>
+      </div>
+    </details>
+  </section>
+
+  <div class="scrim" id="scrim"></div>
+
+  <script src="https://cdn.jsdelivr.net/npm/marked@12.0.2/marked.min.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
