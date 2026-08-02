@@ -1,0 +1,62 @@
+/* Story creatives, 1080x1920.
+   The plates are all landscape, so the first version of this file letterboxed
+   them into a band in the middle with ground colour above and below. That reads
+   as a landscape picture parked in a vertical frame. Here the art is scaled
+   past the frame width and anchored to the very top, so it bleeds off three
+   edges and dissolves into the ground colour on the fourth. Nothing floats.
+
+   Ground colour is one variable, set by a class on .frame:
+     (default)  cream, the house background
+     .grey      warm grey, matches the photo collage plate's own ground
+     .navy      the blue and orange plate
+
+   No baked-in call to action: Instagram's link sticker is tappable and a drawn
+   button is not, so everything below y=1650 is left clear for it.
+   Load after base-social.css. */
+
+html, body { width: 1080px; height: 1920px; }
+
+.frame {
+  --ground: 243, 236, 225;
+  width: 1080px; height: 1920px;
+  background-color: rgb(var(--ground));
+  background-size: 1700px auto;
+  background-position: center top;
+}
+.frame.grey { --ground: 236, 231, 223; }
+.frame.navy { --ground: 21, 42, 86; }
+
+.fade {
+  position: absolute; inset: 0;
+  background: linear-gradient(180deg,
+    rgba(var(--ground), 0) 30%,
+    rgba(var(--ground), 0.58) 43%,
+    rgba(var(--ground), 0.97) 53%,
+    rgba(var(--ground), 1) 58%);
+}
+
+.block { position: absolute; left: 78px; right: 78px; top: 1060px; text-align: center; }
+.kicker { font-size: 25px; letter-spacing: 0.4em; }
+.title { font-size: 72px; line-height: 1.1; margin: 24px 0 16px; }
+.subtitle { font-size: 34px; }
+.rule { width: 118px; height: 3px; background: #c2571f; margin: 30px auto; }
+.details { font-size: 32px; line-height: 1.65; }
+.details .small {
+  font-size: 0.78em; letter-spacing: 0.09em; text-transform: uppercase;
+  color: #7a6a58; font-weight: 500;
+}
+
+/* ---- navy variant ---- */
+.navy .kicker { color: #ffb677; }
+.navy .title {
+  font-family: 'Montserrat', sans-serif; font-weight: 800; font-size: 64px;
+  text-transform: uppercase; letter-spacing: 0.02em; color: #fdf6ee;
+}
+.navy .subtitle {
+  font-family: 'Fraunces', serif; font-style: italic; font-weight: 400;
+  color: #ffd9b3;
+}
+.navy .rule { background: #ff9950; }
+.navy .details { font-family: 'Montserrat', sans-serif; color: #fdf6ee; }
+.navy .details b { color: #ffb677; }
+.navy .details .small { color: #ffd9b3; }

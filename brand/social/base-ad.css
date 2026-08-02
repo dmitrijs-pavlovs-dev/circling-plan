@@ -1,0 +1,51 @@
+/* Square ad creatives, 1080x1080, on the same design language as the covers.
+   Two layouts, set as a class on .frame:
+     .full   keeps the host portraits, closest to the published cover
+     .clean  drops faces and subtitle for a bigger title that still reads
+             at feed thumbnail size
+   Each ad-NN.html sets only its background plate and its slogan.
+   Load after base-social.css. */
+
+html, body { width: 1080px; height: 1080px; }
+
+.frame {
+  width: 1080px; height: 1080px;
+  background-size: 1560px auto;
+  background-position: center -30px;
+}
+.fade { position: absolute; inset: 0; }
+.block { position: absolute; left: 76px; right: 76px; text-align: center; }
+.kicker { font-size: 22px; }
+.rule { background: #c2571f; }
+.details .small {
+  font-size: 0.8em; letter-spacing: 0.09em; text-transform: uppercase;
+  color: #7a6a58; font-weight: 500;
+}
+
+/* ---- full ---- */
+.full .fade {
+  background: linear-gradient(180deg,
+    rgba(243,236,225,0) 28%,
+    rgba(243,236,225,0.72) 42%,
+    rgba(243,236,225,0.97) 55%);
+}
+.full .block { bottom: 62px; }
+.full .title { font-size: 72px; margin: 18px 0 13px; }
+.full .subtitle { font-size: 32px; }
+.full .rule { width: 110px; height: 3px; margin: 22px auto; }
+.full .hosts { justify-content: center; gap: 44px; margin-bottom: 22px; }
+.full .host .avatar { width: 98px; height: 98px; }
+.full .host .name { margin-top: 8px; font-size: 20px; }
+.full .details { font-size: 25px; line-height: 1.62; }
+
+/* ---- clean ---- */
+.clean .fade {
+  background: linear-gradient(180deg,
+    rgba(243,236,225,0) 36%,
+    rgba(243,236,225,0.75) 50%,
+    rgba(243,236,225,0.98) 62%);
+}
+.clean .block { bottom: 92px; }
+.clean .title { font-size: 88px; margin: 26px 0 0; }
+.clean .rule { width: 130px; height: 3px; margin: 34px auto; }
+.clean .details { font-size: 28px; line-height: 1.7; }

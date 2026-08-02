@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html><head>
+<meta charset="utf-8">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,500&family=Montserrat:wght@400;500;600&display=block" rel="stylesheet">
+<link rel="stylesheet" href="base.css">
+<style>
+.cover {
+  background-color: #f3ece1;
+  background-image: url("../bg/11-two-circles.png");
+  background-size: cover;
+  background-position: left center;
+}
+.fade {
+  position: absolute; inset: 0;
+  background: linear-gradient(90deg, rgba(243,236,225,0) 38%, rgba(243,236,225,0.55) 55%, rgba(243,236,225,0.88) 70%);
+}
+.circle-caption {
+  position: absolute; left: 118px; bottom: 74px;
+  font-family: 'Playfair Display', serif; font-style: italic; font-size: 30px;
+  color: #8a6448; opacity: 0.9;
+}
+.block {
+  position: absolute; right: 96px; top: 50%; transform: translateY(-50%);
+  width: 820px; color: #45372c; text-align: left;
+}
+.kicker {
+  font-family: 'Montserrat', sans-serif; font-weight: 600; font-size: 25px;
+  letter-spacing: 0.42em; text-transform: uppercase; color: #c2571f;
+}
+.title {
+  font-family: 'Playfair Display', serif; font-weight: 700; font-size: 88px;
+  line-height: 1.1; margin: 22px 0 14px;
+}
+.title em { font-style: italic; font-weight: 600; color: #c2571f; }
+.subtitle {
+  font-family: 'Playfair Display', serif; font-style: italic; font-weight: 500;
+  font-size: 40px; color: #7a6a58;
+}
+.rule { width: 110px; height: 3px; background: #c2571f; margin: 26px 0; opacity: 0.85; }
+.hosts-named { display: flex; align-items: center; gap: 34px; margin-bottom: 26px; }
+.host { text-align: center; }
+.host .avatar { width: 128px; height: 128px; border-color: rgba(255,252,246,0.95); }
+.host .name {
+  margin-top: 10px; font-family: 'Montserrat', sans-serif; font-weight: 500;
+  font-size: 25px; color: #55463a; letter-spacing: 0.06em;
+}
+.hosted-by {
+  font-family: 'Playfair Display', serif; font-style: italic; font-size: 30px; color: #7a6a58;
+}
+.details {
+  font-family: 'Montserrat', sans-serif; font-weight: 500; font-size: 30px;
+  letter-spacing: 0.04em; line-height: 1.8; color: #55463a;
+}
+.details b { font-weight: 600; color: #c2571f; }
+</style>
+</head><body>
+<div class="cover">
+  <div class="fade"></div>
+  <div class="circle-caption">you · the space between · another</div>
+  <div class="block">
+    <div class="kicker">Circling · Authentic Relating</div>
+    <div class="title">Stay with <em>yourself</em>,<br>meet <em>another</em></div>
+    <div class="subtitle">let yourself be touched &amp; moved</div>
+    <div class="rule"></div>
+    <div class="hosts-named">
+      <div class="host">
+        <img class="avatar diana" src="../avatars/diana.png">
+        <div class="name">Diana</div>
+      </div>
+      <div class="host">
+        <img class="avatar dmitrijs" src="../avatars/dmitrijs-face.png">
+        <div class="name">Dmitrijs</div>
+      </div>
+      <div class="hosted-by">your hosts<br>&amp; guides</div>
+    </div>
+    <div class="details"><b>Sunday, 16 August · 16:30</b><br>Üks Maja · Valdeku 66, Tallinn</div>
+  </div>
+</div>
+</body></html>

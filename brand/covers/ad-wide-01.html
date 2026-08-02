@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html><head>
+<meta charset="utf-8">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,500&family=Montserrat:wght@400;500;600&display=block" rel="stylesheet">
+<link rel="stylesheet" href="base.css">
+<style>
+/* The one boosted ad creative. 1920x1005 is 1.91:1, the ratio Facebook wants
+   for a landscape feed ad, and it downscales cleanly to their 1200x628.
+   Layout follows cover-03: collage circle left, text right. */
+.cover {
+  background-color: #ece7df;
+  background-image: url("../bg/03-photo-collage.png");
+  background-size: 1340px auto;
+  background-position: -160px center;
+  background-repeat: no-repeat;
+}
+.fade {
+  position: absolute; inset: 0;
+  background: linear-gradient(90deg,
+    rgba(236,231,223,0) 28%,
+    rgba(236,231,223,0.85) 45%,
+    rgba(236,231,223,1) 55%);
+}
+.block {
+  position: absolute; right: 96px; top: 50%; transform: translateY(-50%);
+  width: 790px; color: #37302a; text-align: left;
+}
+.kicker {
+  font-family: 'Montserrat', sans-serif; font-weight: 600; font-size: 24px;
+  letter-spacing: 0.4em; text-transform: uppercase; color: #c2571f;
+}
+.title {
+  font-family: 'Playfair Display', serif; font-weight: 700; font-size: 88px;
+  line-height: 1.06; margin: 22px 0 12px;
+}
+.title em { font-style: italic; font-weight: 600; color: #c2571f; }
+.subtitle {
+  font-family: 'Playfair Display', serif; font-style: italic; font-weight: 500;
+  font-size: 40px; color: #6d6156;
+}
+.rule { width: 110px; height: 3px; background: #c2571f; margin: 26px 0; opacity: 0.85; }
+.hosts-row { justify-content: flex-start; margin-bottom: 24px; }
+.avatar { width: 108px; height: 108px; }
+.host-names {
+  font-family: 'Montserrat', sans-serif; font-weight: 500; font-size: 28px; color: #47403a;
+}
+.details {
+  font-family: 'Montserrat', sans-serif; font-weight: 500; font-size: 29px;
+  letter-spacing: 0.04em; line-height: 1.72; color: #47403a;
+}
+.details b { font-weight: 600; color: #c2571f; }
+.details .small {
+  display: inline-block; margin-top: 6px;
+  font-size: 0.78em; letter-spacing: 0.1em; text-transform: uppercase; color: #7a6a58;
+}
+</style>
+</head><body>
+<div class="cover">
+  <div class="fade"></div>
+  <div class="block">
+    <div class="kicker">Circling · Authentic Relating</div>
+    <div class="title">Meet people,<br><em>for real</em> this time</div>
+    <div class="subtitle">a journey of transformation</div>
+    <div class="rule"></div>
+    <div class="hosts-row">
+      <div class="avatars">
+        <img class="avatar diana" src="../avatars/diana.png">
+        <img class="avatar dmitrijs" src="../avatars/dmitrijs-face.png">
+      </div>
+      <div class="host-names">with Dmitrijs &amp; Diana</div>
+    </div>
+    <div class="details"><b>Sunday, 16 August · 16:30</b><br>Üks Maja · Valdeku 66, Tallinn<br><span class="small">In English · No experience needed</span></div>
+  </div>
+</div>
+</body></html>

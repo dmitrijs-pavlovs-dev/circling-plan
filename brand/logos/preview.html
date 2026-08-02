@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+  body {
+    margin: 0;
+    padding: 40px;
+    background: #ffffff;
+    font-family: -apple-system, "Helvetica Neue", sans-serif;
+    width: 1240px;
+  }
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 36px 24px;
+  }
+  .item { text-align: center; }
+  .pair {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 18px;
+  }
+  .square img, .round img { width: 100%; height: 100%; object-fit: cover; }
+  .square {
+    width: 168px; height: 168px;
+    border: 1px solid #e3ded6;
+    overflow: hidden;
+  }
+  .round {
+    width: 168px; height: 168px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 4px solid #fff;
+    box-shadow: 0 0 0 1px #d8d2c8, 0 4px 14px rgba(0,0,0,.12);
+  }
+  .label {
+    margin-top: 12px;
+    font-size: 15px;
+    color: #4a4a4a;
+    letter-spacing: .01em;
+  }
+  h1 { font-size: 20px; color: #333; font-weight: 600; margin: 0 0 8px; }
+  .note { font-size: 14px; color: #777; margin: 0 0 32px; }
+</style>
+</head>
+<body>
+  <h1>Text-integrated logos — square file vs. Facebook circular crop</h1>
+  <p class="note">Left of each pair: the raw square file. Right: how Facebook will crop it as a profile picture.</p>
+  <div class="grid">
+    <div class="item">
+      <div class="pair">
+        <div class="square"><img src="logo-11-heart-wordmark.png"></div>
+        <div class="round"><img src="logo-11-heart-wordmark.png"></div>
+      </div>
+      <div class="label">11 · heart + wordmark</div>
+    </div>
+    <div class="item">
+      <div class="pair">
+        <div class="square"><img src="logo-12-heart-badge.png"></div>
+        <div class="round"><img src="logo-12-heart-badge.png"></div>
+      </div>
+      <div class="label">12 · heart badge (curved text)</div>
+    </div>
+    <div class="item">
+      <div class="pair">
+        <div class="square"><img src="logo-13-heart-inside.png"></div>
+        <div class="round"><img src="logo-13-heart-inside.png"></div>
+      </div>
+      <div class="label">13 · text inside heart</div>
+    </div>
+    <div class="item">
+      <div class="pair">
+        <div class="square"><img src="logo-14-flame-wordmark.png"></div>
+        <div class="round"><img src="logo-14-flame-wordmark.png"></div>
+      </div>
+      <div class="label">14 · flame + wordmark</div>
+    </div>
+    <div class="item">
+      <div class="pair">
+        <div class="square"><img src="logo-15-flame-badge.png"></div>
+        <div class="round"><img src="logo-15-flame-badge.png"></div>
+      </div>
+      <div class="label">15 · flame badge (curved text)</div>
+    </div>
+    <div class="item">
+      <div class="pair">
+        <div class="square"><img src="logo-16-flame-stacked.png"></div>
+        <div class="round"><img src="logo-16-flame-stacked.png"></div>
+      </div>
+      <div class="label">16 · flame + Soulful / EVENTS</div>
+    </div>
+  </div>
+</body>
+</html>

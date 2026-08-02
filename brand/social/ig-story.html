@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html><head>
+<meta charset="utf-8">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,500&family=Montserrat:wght@400;500;600&display=block" rel="stylesheet">
+<link rel="stylesheet" href="base-social.css">
+<style>
+html, body { width: 1080px; height: 1920px; }
+.frame {
+  width: 1080px; height: 1920px;
+  background-image: url("../bg/16-people-topview.png");
+  background-size: 1500px auto;
+  background-position: center 660px;
+}
+/* Art lives in the middle band only; both text blocks sit on clean cream. */
+.fade {
+  position: absolute; inset: 0;
+  background: linear-gradient(180deg,
+    rgba(243,236,225,1) 34%,
+    rgba(243,236,225,0.25) 44%,
+    rgba(243,236,225,0.25) 56%,
+    rgba(243,236,225,0.98) 66%);
+}
+/* Top 250px / bottom 250px are Instagram's UI safe zones — keep them clear. */
+.top { position: absolute; left: 80px; right: 80px; top: 290px; text-align: center; }
+.kicker { font-size: 24px; }
+.title { font-size: 86px; margin: 26px 0 16px; }
+.subtitle { font-size: 36px; }
+.bottom { position: absolute; left: 80px; right: 80px; bottom: 300px; text-align: center; }
+.rule { width: 120px; margin: 0 auto 40px; }
+.hosts { justify-content: center; gap: 48px; margin-bottom: 34px; }
+.host .avatar { width: 132px; height: 132px; }
+.host .name { margin-top: 12px; font-size: 25px; }
+.details { font-size: 32px; line-height: 1.7; }
+.cta {
+  margin-top: 34px; display: inline-block;
+  font-family: 'Montserrat', sans-serif; font-weight: 600; font-size: 27px;
+  letter-spacing: 0.14em; text-transform: uppercase; color: #f7efe4;
+  background: #c2571f; padding: 20px 46px; border-radius: 999px;
+}
+</style>
+</head><body>
+<div class="frame">
+  <div class="fade"></div>
+  <div class="top">
+    <div class="kicker">Circling · Authentic Relating</div>
+    <div class="title">Slow down,<br><em>be seen</em>,<br>connect <em>for real</em></div>
+    <div class="subtitle">a journey of transformation</div>
+  </div>
+  <div class="bottom">
+    <div class="rule"></div>
+    <div class="hosts">
+      <div class="host">
+        <img class="avatar diana" src="../avatars/diana.png">
+        <div class="name">Diana</div>
+      </div>
+      <div class="host">
+        <img class="avatar dmitrijs" src="../avatars/dmitrijs-face.png">
+        <div class="name">Dmitrijs</div>
+      </div>
+    </div>
+    <div class="details"><b>Sunday, 16 August · 16:30</b><br>Üks Maja · Valdeku 66, Tallinn</div>
+    <div class="cta">Link in bio</div>
+  </div>
+</div>
+</body></html>

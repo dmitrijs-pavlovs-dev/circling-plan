@@ -1,0 +1,64 @@
+/* Square version of cover-05: full-bleed blue and orange sketch, navy scrim
+   rising from the bottom, heavy uppercase Montserrat in cream on top.
+   The one loud creative in the set. Load after base-social.css. */
+
+html, body { width: 1080px; height: 1080px; }
+
+.frame {
+  width: 1080px; height: 1080px;
+  background-color: #152a56;
+  background-image: url("../bg/05-blue-orange-sketch.png");
+  background-size: 1420px auto;
+  background-position: center 30%;
+}
+.scrim {
+  position: absolute; inset: 0;
+  background: linear-gradient(180deg,
+    rgba(21,42,86,0.30) 0%,
+    rgba(21,42,86,0.10) 26%,
+    rgba(21,42,86,0.72) 52%,
+    rgba(21,42,86,0.94) 70%);
+}
+.block {
+  position: absolute; left: 70px; right: 70px; bottom: 62px;
+  text-align: center; color: #fdf6ee;
+}
+.kicker { font-size: 21px; letter-spacing: 0.38em; color: #ffb677; }
+.title {
+  font-family: 'Montserrat', sans-serif; font-weight: 800; font-size: 74px;
+  line-height: 1.08; letter-spacing: 0.02em; text-transform: uppercase;
+  color: #fdf6ee; margin: 18px 0 12px;
+}
+.subtitle {
+  font-family: 'Fraunces', serif; font-style: italic; font-weight: 400;
+  font-size: 32px; color: #ffd9b3;
+}
+.rule { width: 110px; height: 3px; background: #ff9950; margin: 22px auto; }
+
+.hosts-row {
+  display: flex; align-items: center; justify-content: center;
+  gap: 22px; margin-bottom: 20px;
+}
+.avatars { display: flex; flex-shrink: 0; }
+.avatar {
+  width: 92px; height: 92px; border-radius: 50%; object-fit: cover;
+  border: 5px solid rgba(255,246,238,0.95);
+  box-shadow: 0 8px 22px rgba(0,0,0,0.35);
+}
+.avatar.dmitrijs { object-position: 50% 45%; }
+.avatar.diana { object-position: 50% 38%; }
+.avatar + .avatar { margin-left: -24px; }
+.host-names {
+  font-family: 'Montserrat', sans-serif; font-weight: 500;
+  font-size: 25px; color: #fdf6ee;
+}
+
+.details {
+  font-family: 'Montserrat', sans-serif; font-weight: 500;
+  font-size: 25px; letter-spacing: 0.04em; line-height: 1.6; color: #fdf6ee;
+}
+.details b { font-weight: 600; color: #ffb677; }
+.details .small {
+  font-size: 0.8em; letter-spacing: 0.09em; text-transform: uppercase;
+  color: #ffd9b3; font-weight: 500;
+}

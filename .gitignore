@@ -1,0 +1,10 @@
+.DS_Store
+_site/
+untitled folder/
+node_modules/
+
+# Rendered PNGs are regenerable with ./render.sh, so they stay out of git.
+# The ones that were actually published live in events/<date>/assets/.
+# Note this only covers brand/out: the archived rounds keep their renders in
+# git, because render.sh doesn't target archive/ and they can't be regenerated.
+brand/out/

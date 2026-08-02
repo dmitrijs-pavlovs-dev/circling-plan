@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html><head>
+<meta charset="utf-8">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..600;1,9..144,400&family=Jost:wght@400;500;600&display=block" rel="stylesheet">
+<link rel="stylesheet" href="base.css">
+<style>
+.cover {
+  background-color: #fdf4ec;
+  background-image: url("../bg/02-watercolor-ring.png");
+  background-size: 2380px auto;
+  background-position: -560px 42%;
+}
+.scrim {
+  position: absolute; inset: 0;
+  background: linear-gradient(85deg, rgba(253,244,236,0) 42%, rgba(253,244,236,0.82) 60%, rgba(253,244,236,0.98) 74%);
+}
+.block {
+  position: absolute; right: 96px; top: 50%; transform: translateY(-50%);
+  width: 780px; color: #43372e; text-align: left;
+}
+.kicker {
+  font-family: 'Jost', sans-serif; font-weight: 600; font-size: 27px;
+  letter-spacing: 0.4em; text-transform: uppercase; color: #cd6338;
+}
+.title {
+  font-family: 'Fraunces', serif; font-weight: 500; font-size: 106px;
+  line-height: 1.02; margin: 22px 0 12px; color: #3a2f26;
+}
+.subtitle {
+  font-family: 'Fraunces', serif; font-style: italic; font-weight: 400;
+  font-size: 44px; color: #7a695a;
+}
+.rule { width: 110px; height: 2px; background: #cd6338; margin: 28px 0 26px; opacity: 0.8; }
+.hosts-named { display: flex; align-items: center; gap: 34px; margin-bottom: 26px; }
+.host { text-align: center; }
+.host .avatar { width: 128px; height: 128px; border-color: #fff; }
+.host .name {
+  margin-top: 10px; font-family: 'Jost', sans-serif; font-weight: 500;
+  font-size: 26px; color: #55463c; letter-spacing: 0.06em;
+}
+.hosted-by {
+  font-family: 'Fraunces', serif; font-style: italic; font-size: 30px; color: #7a695a;
+}
+.details {
+  font-family: 'Jost', sans-serif; font-weight: 500; font-size: 31px;
+  letter-spacing: 0.05em; line-height: 1.75; color: #55463c;
+}
+.details b { font-weight: 600; color: #b25327; }
+</style>
+</head><body>
+<div class="cover">
+  <div class="scrim"></div>
+  <div class="block">
+    <div class="kicker">Circling · Authentic Relating</div>
+    <div class="title">A Journey of Transformation</div>
+    <div class="subtitle">slow down, be seen, connect for real</div>
+    <div class="rule"></div>
+    <div class="hosts-named">
+      <div class="host">
+        <img class="avatar dmitrijs" src="../avatars/dmitrijs-face.png">
+        <div class="name">Dmitrijs</div>
+      </div>
+      <div class="host">
+        <img class="avatar diana" src="../avatars/diana.png">
+        <div class="name">Diana</div>
+      </div>
+      <div class="hosted-by">your hosts<br>&amp; guides</div>
+    </div>
+    <div class="details"><b>Sunday, 16 August · 16:30</b><br>Üks Maja · Valdeku 66, Tallinn</div>
+  </div>
+</div>
+</body></html>

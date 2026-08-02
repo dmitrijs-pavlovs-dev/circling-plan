@@ -1,0 +1,924 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Circling & Authentic Relating · Programme for the evening</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --cream: #f3ece1;
+    --cream-deep: #ece2d3;
+    --paper: #fbf7f0;
+    --orange: #c2571f;
+    --orange-soft: #e2a878;
+    --ink: #45372c;
+    --muted: #7a6a58;
+    --rule: #ddd0bd;
+    --maxw: 860px;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: var(--cream);
+    color: var(--ink);
+    font-family: "Montserrat", system-ui, sans-serif;
+    font-size: 16px;
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+    padding: 0 20px 100px;
+  }
+
+  .wrap { max-width: var(--maxw); margin: 0 auto; }
+
+  /* ---------- app link ---------- */
+
+  .applink {
+    position: fixed;
+    top: 14px;
+    right: 14px;
+    z-index: 10;
+    font-size: 10.5px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    font-weight: 600;
+    color: var(--orange);
+    text-decoration: none;
+    background: var(--paper);
+    border: 1px solid var(--rule);
+    border-radius: 999px;
+    padding: 8px 15px;
+  }
+  .applink:hover { background: #fff; }
+
+  /* ---------- masthead ---------- */
+
+  header.masthead {
+    padding: 80px 0 44px;
+    border-bottom: 1px solid var(--rule);
+    text-align: center;
+  }
+  .kicker {
+    font-size: 11px;
+    letter-spacing: 0.34em;
+    text-transform: uppercase;
+    color: var(--orange);
+    font-weight: 600;
+  }
+  h1 {
+    font-family: "Playfair Display", serif;
+    font-weight: 400;
+    font-size: clamp(34px, 6vw, 54px);
+    line-height: 1.14;
+    margin: 18px 0 10px;
+  }
+  .standfirst {
+    font-family: "Playfair Display", serif;
+    font-style: italic;
+    font-size: clamp(18px, 2.6vw, 22px);
+    color: var(--muted);
+  }
+  .facts {
+    margin-top: 26px;
+    font-size: 12.5px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+  .facts span { white-space: nowrap; }
+
+  /* ---------- arc strip ---------- */
+
+  .arc {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px 0;
+    padding: 34px 0 6px;
+  }
+  .arc b {
+    font-weight: 500;
+    font-size: 12px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--ink);
+    background: var(--paper);
+    border: 1px solid var(--rule);
+    border-radius: 999px;
+    padding: 7px 15px;
+  }
+  .arc i {
+    color: var(--orange-soft);
+    font-style: normal;
+    padding: 7px 8px;
+    font-size: 12px;
+  }
+
+  /* ---------- sections ---------- */
+
+  section { padding-top: 58px; }
+
+  h2 {
+    font-family: "Playfair Display", serif;
+    font-weight: 400;
+    font-size: clamp(26px, 4vw, 34px);
+    line-height: 1.2;
+    padding-bottom: 14px;
+    border-bottom: 1px solid var(--rule);
+    margin-bottom: 26px;
+  }
+  h2 .num {
+    font-family: "Montserrat", sans-serif;
+    font-size: 11px;
+    letter-spacing: 0.28em;
+    color: var(--orange);
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+  }
+  .lede {
+    font-family: "Playfair Display", serif;
+    font-style: italic;
+    font-size: 19px;
+    color: var(--muted);
+    margin-bottom: 30px;
+  }
+
+  p { margin-bottom: 14px; }
+  p:last-child { margin-bottom: 0; }
+
+  ul { margin: 0 0 14px 0; padding-left: 20px; }
+  ul:last-child { margin-bottom: 0; }
+  li { margin-bottom: 7px; }
+  li::marker { color: var(--orange-soft); }
+
+  strong { font-weight: 600; }
+  em { font-style: italic; }
+
+  /* ---------- principles ---------- */
+
+  .principle {
+    background: var(--paper);
+    border: 1px solid var(--rule);
+    border-left: 3px solid var(--orange);
+    border-radius: 4px;
+    padding: 28px 30px;
+    margin-bottom: 18px;
+  }
+  .principle h3 {
+    font-family: "Playfair Display", serif;
+    font-weight: 600;
+    font-size: 23px;
+    line-height: 1.25;
+    margin-bottom: 4px;
+  }
+  .principle .tag {
+    font-size: 10.5px;
+    letter-spacing: 0.24em;
+    text-transform: uppercase;
+    color: var(--orange);
+    font-weight: 600;
+    margin-bottom: 12px;
+  }
+  .principle .body { font-size: 15.5px; }
+
+  .saying {
+    margin-top: 18px;
+    padding-top: 16px;
+    border-top: 1px dashed var(--rule);
+  }
+  .saying .label {
+    font-size: 10.5px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--muted);
+    font-weight: 600;
+    margin-bottom: 8px;
+  }
+  .saying q {
+    font-family: "Playfair Display", serif;
+    font-style: italic;
+    font-size: 17px;
+    color: var(--ink);
+    display: block;
+    margin-bottom: 8px;
+  }
+  .saying q:last-child { margin-bottom: 0; }
+
+  .layers {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    margin: 18px 0 4px;
+  }
+  .layer {
+    background: var(--cream-deep);
+    border-radius: 4px;
+    padding: 14px 16px;
+    font-size: 14px;
+  }
+  .layer b {
+    display: block;
+    font-family: "Playfair Display", serif;
+    font-weight: 600;
+    font-size: 16px;
+    margin-bottom: 4px;
+  }
+  .layer span { color: var(--muted); font-style: italic; }
+
+  /* ---------- run of show ---------- */
+
+  .beat {
+    display: grid;
+    grid-template-columns: 92px 1fr;
+    gap: 0 26px;
+    padding: 22px 0;
+    border-bottom: 1px solid var(--rule);
+  }
+  .beat:last-of-type { border-bottom: none; }
+  .beat.rest { background: linear-gradient(90deg, rgba(226,168,120,0.13), transparent 70%); }
+
+  .clock {
+    font-family: "Playfair Display", serif;
+    font-size: 22px;
+    line-height: 1.2;
+    padding-top: 2px;
+  }
+  .clock small {
+    display: block;
+    font-family: "Montserrat", sans-serif;
+    font-size: 10.5px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-top: 3px;
+  }
+
+  .beat h3 {
+    font-family: "Playfair Display", serif;
+    font-weight: 600;
+    font-size: 21px;
+    line-height: 1.25;
+    margin-bottom: 3px;
+  }
+  .lead {
+    font-size: 10.5px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--orange);
+    font-weight: 600;
+    margin-bottom: 11px;
+  }
+  .beat .body { font-size: 15px; }
+
+  .note {
+    margin-top: 12px;
+    font-size: 14px;
+    color: var(--muted);
+    border-left: 2px solid var(--orange-soft);
+    padding-left: 14px;
+  }
+  .note b { color: var(--ink); }
+
+  /* ---------- open questions ---------- */
+
+  .open {
+    background: var(--paper);
+    border: 1px dashed var(--orange-soft);
+    border-radius: 4px;
+    padding: 26px 30px;
+    margin-bottom: 16px;
+  }
+  .open h3 {
+    font-family: "Playfair Display", serif;
+    font-weight: 600;
+    font-size: 20px;
+    margin-bottom: 8px;
+  }
+  .open .body { font-size: 15px; }
+  .badge {
+    display: inline-block;
+    font-size: 9.5px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    font-weight: 600;
+    color: #fff;
+    background: var(--orange);
+    border-radius: 3px;
+    padding: 3px 8px;
+    vertical-align: 3px;
+    margin-left: 10px;
+  }
+
+  .missing {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px;
+  }
+  .miss {
+    background: var(--paper);
+    border: 1px solid var(--rule);
+    border-radius: 4px;
+    padding: 18px 20px;
+    font-size: 14.5px;
+  }
+  .miss b {
+    display: block;
+    font-family: "Playfair Display", serif;
+    font-weight: 600;
+    font-size: 17px;
+    margin-bottom: 5px;
+  }
+  .miss .where {
+    display: block;
+    margin-top: 9px;
+    font-size: 10.5px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--orange);
+    font-weight: 600;
+  }
+
+  footer {
+    margin-top: 70px;
+    padding-top: 24px;
+    border-top: 1px solid var(--rule);
+    font-size: 13px;
+    color: var(--muted);
+    text-align: center;
+  }
+
+  @media (max-width: 700px) {
+    .beat { grid-template-columns: 1fr; gap: 6px; }
+    .clock { font-size: 19px; }
+    .clock small { display: inline; margin-left: 10px; }
+    .layers, .missing { grid-template-columns: 1fr; }
+    .arc { gap: 8px; }
+    .arc i { display: none; }
+    .principle, .open { padding: 22px; }
+    header.masthead { padding-top: 20px; }
+    .applink {
+      position: static;
+      display: block;
+      width: fit-content;
+      margin: 20px auto 0;
+    }
+  }
+
+  @media print {
+    body { background: #fff; padding: 0; }
+    .applink { display: none; }
+    section { page-break-inside: auto; }
+    .beat, .principle, .miss, .open { page-break-inside: avoid; }
+  }
+</style>
+</head>
+<body>
+<a class="applink" href="index.html">Live plan &amp; timer ↗</a>
+<div class="wrap">
+
+<header class="masthead">
+  <div class="kicker">Soulful events · Tallinn</div>
+  <h1>Circling &amp; Authentic Relating</h1>
+  <div class="standfirst">Programme for the evening</div>
+  <div class="facts">
+    <span>Sunday 16 August</span> · <span>16:30 to 19:30</span> · <span>Üks Maja, Valdeku 66</span><br />
+    <span>Dmitrijs &amp; Diana</span> · <span>three hours</span>
+  </div>
+  <div class="arc">
+    <b>Arrive</b><i>›</i>
+    <b>Principles</b><i>›</i>
+    <b>Body</b><i>›</i>
+    <b>Meeting</b><i>›</i>
+    <b>Pairs</b><i>›</i>
+    <b>Threes</b><i>›</i>
+    <b>Circle</b>
+  </div>
+</header>
+
+<!-- ============ 1. PRINCIPLES ============ -->
+
+<section>
+  <h2><span class="num">One</span>The principles we hold</h2>
+  <p class="lede">Four, drawn from both authentic relating and circling. Spoken between the two of us rather than read out, with a live example each. Not a final exam, an offering.</p>
+
+  <div class="principle">
+    <h3>Welcome everything, trust your experience</h3>
+    <div class="tag">Body awareness is the anchor</div>
+    <div class="body">
+      <p>Welcoming everything means not trying to change your experience into
+      something else. Opening your perception, observing what is, without
+      judgment, with curiosity. Giving it space instead of shoving parts of it
+      away because they feel wrong to have.</p>
+      <p>Some parts of our experience we were conditioned not to welcome. If
+      someone grew up having to hide anger, or ignore it, contact with that
+      anger gets lost, and welcoming it back is harder. That is often exactly
+      where the growth is, and curiosity is what makes it possible.</p>
+      <p>Alongside welcoming there is trusting. It can be hard to trust shame,
+      or discomfort, and to let it have room inside. <em>Okay, I am feeling it
+      right now, that is what is present.</em> Trusting that is where the magic
+      happens. What we try to bring is a space where that is allowed.</p>
+      <p>Whenever it gets abstract, the body brings you back. The anchor is
+      always the sensation, the breath, the ground.</p>
+    </div>
+    <div class="saying">
+      <div class="label">Ways to say it in the room</div>
+      <q>Nothing that arises here is a mistake.</q>
+      <q>You do not have to make it into something better before you bring it.</q>
+      <q>If you lose the thread, come back to your breath and to the floor under you.</q>
+    </div>
+  </div>
+
+  <div class="principle">
+    <h3>Present moment focus, and not going into stories</h3>
+    <div class="tag">Sensation, feeling, story</div>
+    <div class="body">
+      <p>The first default for most of us is the story and the explanation.
+      Here we offer dropping into the present instead. The easiest door is the
+      body: what the breath is like, how it is to be in this body right now,
+      whether there is an impulse to move away from someone or toward them, and
+      simply being with that.</p>
+      <p>It is precious to be able to tell these three apart, because it changes
+      what you can bring into the space.</p>
+      <div class="layers">
+        <div class="layer"><b>Sensation</b><span>My stomach is growling. My cheeks are hot. Something is tight here.</span></div>
+        <div class="layer"><b>Feeling</b><span>I am angry. I am upset. I am warm toward you.</span></div>
+        <div class="layer"><b>Story</b><span>What I make it mean. About myself, about you, about what is happening.</span></div>
+      </div>
+      <p>Stories are not forbidden, they are simply the thing that carries us
+      out of the present moment and out of contact with the feeling underneath.
+      So we lean toward the sensations and emotions happening now.</p>
+    </div>
+    <div class="saying">
+      <div class="label">Ways to say it in the room</div>
+      <q>Rather than the story about it, what is happening in you as you say it?</q>
+      <q>Right now, in your body, what is here?</q>
+    </div>
+  </div>
+
+  <div class="principle">
+    <h3>Own your experience, reveal it, share the impact</h3>
+    <div class="tag">Honesty is what we are after</div>
+    <div class="body">
+      <p>Owning means the feeling is mine. I do not put it on anyone else, I
+      take it and I say it from inside: <em>I feel something when you say
+      that.</em></p>
+      <p>Then there is the movement outward. Noticing something inside is one
+      thing. Speaking it is a step toward vulnerability, opening the experience
+      into the space and sharing it with the others. That step is what we
+      welcome most.</p>
+      <p>Sharing the impact is the other half: saying what it is like to be with
+      what someone else just shared. It stays a report from my side,
+      <em>I feel X when you Y</em>, never a verdict on the other person.</p>
+      <p>And a piece of wisdom worth saying out loud: sometimes someone shares
+      something and you notice you are really annoyed, or that you badly want to
+      save them. The practice is not to act on it and not to swallow it, but to
+      notice it and voice it. <em>I notice a strong wish to help you right
+      now.</em> That is the whole thing in one move.</p>
+    </div>
+    <div class="saying">
+      <div class="label">Ways to say it in the room</div>
+      <q>I feel X when you Y.</q>
+      <q>Hearing that, I notice…</q>
+      <q>I notice a strong desire to rescue you right now, and I am staying with it instead.</q>
+    </div>
+  </div>
+
+  <div class="principle">
+    <h3>Do not fix, change, or rescue</h3>
+    <div class="tag">Sovereignty</div>
+    <div class="body">
+      <p><strong>The stance:</strong> honour each person's sovereignty and their
+      capacity to hold their own state.</p>
+      <p><strong>In practice:</strong> resist the urge to offer advice, to cheer
+      someone up, to minimise discomfort, or to solve an emotion. Let people
+      have their authentic experience without trying to make them comfortable or
+      different.</p>
+      <p>This is the natural pair to the one above. The urge to fix is usually
+      real and worth revealing. It is the acting on it that closes the space.</p>
+    </div>
+    <div class="saying">
+      <div class="label">Ways to say it in the room</div>
+      <q>Nobody here needs to be fixed, and nothing here needs to be resolved by the end.</q>
+      <q>You can be moved by someone without doing anything about it.</q>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 2. WHAT MAY BE MISSING ============ -->
+
+<section>
+  <h2><span class="num">Two</span>What may be missing</h2>
+  <p class="lede">You asked what the four might not cover. These are the candidates, and where each one probably belongs.</p>
+
+  <div class="missing">
+    <div class="miss">
+      <b>You choose how much to share</b>
+      Passing is a full answer. It is already promised in the event description,
+      so it has to be said aloud. It is not really a principle, it is a
+      permission, which makes it stronger, not weaker.
+      <span class="where">Say it in the welcome, before the opening circle</span>
+    </div>
+    <div class="miss">
+      <b>Consent, and touch</b>
+      The greeting segment involves elbows, feet and backs. In a room where most
+      people arrived alone, that needs its own framing: the invitation, the
+      obvious way to decline, and a way to decline that costs nothing. Without
+      it, the four principles quietly ask people to welcome something they never
+      agreed to.
+      <span class="where">Its own frame, right before the walking</span>
+    </div>
+    <div class="miss">
+      <b>What is said here stays here</b>
+      Never stated in the current four. One sentence, and people share
+      differently for the rest of the evening.
+      <span class="where">Welcome, with the practicalities</span>
+    </div>
+    <div class="miss">
+      <b>Curiosity instead of conclusion</b>
+      The present moment principle handles the story I tell about myself. It
+      does not handle the story I tell about you. Checking a read out loud,
+      <em>you seem far away to me, is that true for you?</em>, is a different
+      move and it is most of what makes circling work.
+      <span class="where">Either a fifth principle, or folded into pair round two</span>
+    </div>
+    <div class="miss">
+      <b>Slowness and silence</b>
+      Silence between exchanges is welcome, and slowness is what the whole
+      evening is promising. Worth naming once so nobody rushes to fill gaps.
+      <span class="where">One line inside the present moment principle</span>
+    </div>
+    <div class="miss">
+      <b>You can step out</b>
+      Leaving the room and coming back is allowed, and saying so early prevents
+      one person from sitting through something they needed to leave.
+      <span class="where">Welcome, with the practicalities</span>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 3. RUN OF SHOW ============ -->
+
+<section>
+  <h2><span class="num">Three</span>Run of the evening</h2>
+  <p class="lede">Three hours. We are aiming for seven to twelve people, and the real number will not be known until the day, so the scaling notes matter.</p>
+
+  <div class="beat">
+    <div class="clock">16:15<small>15 min</small></div>
+    <div>
+      <h3>Arrival</h3>
+      <div class="lead">Both</div>
+      <div class="body">
+        <p>Shoes off, tea, quiet music. Greet every single person by name at the
+        door. Nobody stands alone holding a cup.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="beat">
+    <div class="clock">16:30<small>8 min</small></div>
+    <div>
+      <h3>Welcome and frame</h3>
+      <div class="lead">Dmitrijs</div>
+      <div class="body">
+        <p>Who the two of you are, a sentence each. Why you run this, something
+        true rather than a pitch. What the shape of the evening is, in four
+        beats, so nobody is guessing.</p>
+        <p>Then the permissions: you always choose how much to share, passing is
+        a full answer, you can step out and come back, and what is said here
+        stays here. Toilets, break time, phones away.</p>
+      </div>
+      <div class="note">Naming your own nervousness here, if it is there, does
+      more for the safety of the room than any framing does.</div>
+    </div>
+  </div>
+
+  <div class="beat">
+    <div class="clock">16:38<small>20 min</small></div>
+    <div>
+      <h3>Opening circle</h3>
+      <div class="lead">Dmitrijs</div>
+      <div class="body">
+        <p>Everyone speaks once, sitting in the circle. Quite a bit of structure
+        here, so nobody has to invent what to say:</p>
+        <ul>
+          <li>Your name.</li>
+          <li><strong>Three sensations</strong> you can feel in your body right now.</li>
+          <li><strong>What you are arriving with,</strong> what it is like to be
+          you at this moment, the mood.</li>
+          <li><strong>What brought you,</strong> your curiosity or desire for
+          today. Your intention.</li>
+        </ul>
+        <p>Demonstrate it by going first, at the length you want back. Around a
+        minute each.</p>
+      </div>
+      <div class="note"><b>Scaling.</b> Twelve people at a minute is twelve
+      minutes and it breathes. Seven is seven, and the minutes you save are
+      worth giving to the closing circle, which needs them. Only above about
+      sixteen does this round need cutting, by dropping to two sensations or
+      splitting into two half circles with one of you in each.</div>
+    </div>
+  </div>
+
+  <div class="beat">
+    <div class="clock">16:58<small>18 min</small></div>
+    <div>
+      <h3>The principles</h3>
+      <div class="lead">Both, alternating</div>
+      <div class="body">
+        <p>Section one of this document, spoken. Take two each so it sounds like
+        a conversation between you rather than a briefing. Roughly four minutes
+        per principle, with one real example from your own life for each.</p>
+        <p>Land the practical shape at the end: sensation, feeling, story. That
+        distinction is the one people will actually use in the pair exercises,
+        so it is worth writing on a sheet of paper and leaving visible.</p>
+      </div>
+      <div class="note">This is the longest talking block of the evening. If
+      the room goes flat, cut the fourth principle short and let the exercises
+      teach it instead.</div>
+    </div>
+  </div>
+
+  <div class="beat">
+    <div class="clock">17:16<small>6 min</small></div>
+    <div>
+      <h3>Breathing</h3>
+      <div class="lead">Diana</div>
+      <div class="body">
+        <p>Arriving on the ground first. Slow, full breaths, filling all the way
+        up, a little more than feels finished, sometimes two breaths in. Then
+        the long, slow release.</p>
+        <p>Around eight cycles, unhurried.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="beat">
+    <div class="clock">17:22<small>10 min</small></div>
+    <div>
+      <h3>Grounding meditation</h3>
+      <div class="lead">Diana</div>
+      <div class="body">
+        <p>Feeling the ground, then travelling through the body and letting each
+        part relax. Fingernails, hands, feet, ankles, pelvis, chest, head.</p>
+        <p>Not a scan you rush. At each place the question is gentle and slow:
+        what is it like to feel this part relaxing. Then staying with that a
+        little.</p>
+      </div>
+      <div class="note">This beat is the handover from talking to moving. Keep
+      it soft rather than deep. The depth belongs later in the evening.</div>
+    </div>
+  </div>
+
+  <div class="beat">
+    <div class="clock">17:32<small>10 min</small></div>
+    <div>
+      <h3>Rising, ground and water</h3>
+      <div class="lead">Diana</div>
+      <div class="body">
+        <p>Coming up onto the feet slowly. Moving with the ground and with the
+        water: rotations, following different parts, the feet, the hands, the
+        head. A little stretching. The quality is grounded and watery, the
+        flowing part of the evening.</p>
+      </div>
+      <div class="note">Solo movement, no contact yet. Music does most of the
+      work here.</div>
+    </div>
+  </div>
+
+  <div class="beat">
+    <div class="clock">17:42<small>8 min</small></div>
+    <div>
+      <h3>Shaking</h3>
+      <div class="lead">Diana</div>
+      <div class="body">
+        <p>Hands, arms, legs, the whole body. Loose and relaxed shaking rather
+        than effortful. Five minutes minimum, eight if the room is with it.</p>
+      </div>
+      <div class="note">The real gift of this beat is that everyone gets to look
+      ridiculous together in the first hour. That permission is worth more than
+      the shaking.</div>
+    </div>
+  </div>
+
+  <div class="beat">
+    <div class="clock">17:50<small>10 min</small></div>
+    <div>
+      <h3>Walking and meeting</h3>
+      <div class="lead">Diana, with the consent frame from Dmitrijs</div>
+      <div class="body">
+        <p>Walking with yourself first. Then walking in the space, noticing
+        there are other people in it. Then the invitation to greet someone
+        physically, lightly: a greeting with the feet, with the elbows, whatever
+        wants to happen. Feel what it is like to meet with an elbow.</p>
+        <p>Light and easy, seeing people, then letting it go and walking on.
+        Several meetings, nothing held for long.</p>
+        <p>It closes standing back to back with one person, resting there,
+        breathing.</p>
+      </div>
+      <div class="note"><b>Frame consent before this starts.</b> The invitation,
+      how to decline, and the fact that walking past someone is a complete and
+      welcome answer. Thirty seconds of framing, and it changes how the whole
+      segment feels for anyone who came alone.</div>
+    </div>
+  </div>
+
+  <div class="beat">
+    <div class="clock">18:00<small>5 min</small></div>
+    <div>
+      <h3>Settling into sitting</h3>
+      <div class="lead">Both</div>
+      <div class="body">
+        <p>From back to back, sliding down to sitting with the same person. Stay
+        back to back for a moment, then turn to face each other. This is the
+        first pair, no partner picking required.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="beat">
+    <div class="clock">18:05<small>15 min</small></div>
+    <div>
+      <h3>Pairs, round one: staying with my experience</h3>
+      <div class="lead">Dmitrijs</div>
+      <div class="body">
+        <p>Facing your partner. The practice is the three layers, out loud.</p>
+        <ul>
+          <li><strong>3 min.</strong> A speaks, B only listens. Present tense
+          only: <em>a sensation I notice… a feeling I notice… a thought I
+          notice…</em> Silence between is welcome.</li>
+          <li><strong>3 min.</strong> Swap.</li>
+          <li><strong>7 min. Ping pong.</strong> One line each, alternating.
+          <em>Right now I notice…</em> Back and forth, no reply required, no
+          conversation.</li>
+        </ul>
+        <p>Demonstrate it, the two of you, for thirty seconds. Explaining takes
+        three minutes and lands worse.</p>
+      </div>
+      <div class="note">With an odd number, one of you partners up and the other
+      keeps time.</div>
+    </div>
+  </div>
+
+  <div class="beat rest">
+    <div class="clock">18:20<small>15 min</small></div>
+    <div>
+      <h3>Break</h3>
+      <div class="lead">Both</div>
+      <div class="body">
+        <p>Tea, water, fruit. Not dead time: this is where people who came alone
+        stop being alone. Both of you circulate toward whoever is standing on
+        their own.</p>
+      </div>
+      <div class="note">A fifteen minute break becomes twenty five without
+      somebody calling people back. One of you owns the clock all evening,
+      decide who before the doors open.</div>
+    </div>
+  </div>
+
+  <div class="beat">
+    <div class="clock">18:35<small>15 min</small></div>
+    <div>
+      <h3>Pairs, round two: sharing the impact</h3>
+      <div class="lead">Dmitrijs</div>
+      <div class="body">
+        <p>New partner. Same ping pong, one thing added: what happens in me when
+        you say yours.</p>
+        <ul>
+          <li>A: <em>Right now I notice…</em></li>
+          <li>B: <em>Hearing that, I notice…</em> then their own.</li>
+          <li>Alternating, 12 minutes, with a switch of who opens halfway.</li>
+        </ul>
+        <p>Two things to name before it starts. First, the impact is always from
+        my side, <em>I feel X when you Y</em>, never a read on who they are.
+        Second, if the urge to help or fix arrives, that is the material: say it
+        instead of doing it.</p>
+      </div>
+      <div class="note">If you want the curiosity principle in the evening, this
+      is where it fits: add <em>you seem [ ] to me, is that true for you?</em> as
+      a third permitted move.</div>
+    </div>
+  </div>
+
+  <div class="beat">
+    <div class="clock">18:50<small>25 min</small></div>
+    <div>
+      <h3>Threes</h3>
+      <div class="lead">Both, moving between groups</div>
+      <div class="body">
+        <p>Groups of three, counted off rather than self selected. One person is
+        the focus, the other two are with them.</p>
+        <ul>
+          <li>The focus person says what is alive for them right now. Not a
+          story from the week, what is here.</li>
+          <li>The other two say what they notice <strong>in themselves</strong>
+          while being with that person, and may ask what is here for them now.</li>
+          <li>No advice, no fixing, no going into the past.</li>
+          <li>Around seven minutes each, then a short pause and rotate.</li>
+        </ul>
+        <p>This is the bridge into circling. Say that, so people know the last
+        beat is not a new thing to learn.</p>
+      </div>
+      <div class="note">Both of you float rather than sitting in one group.
+      Ring a bell at each rotation so the groups stay together in time. Seven
+      people makes one three and one four, and the four gets about five minutes
+      each rather than seven. If only seven or eight arrive, staying in one
+      circle for this beat is the better evening, and it turns the last two
+      beats into one long circle.</div>
+    </div>
+  </div>
+
+  <div class="beat">
+    <div class="clock">19:15<small>15 min</small></div>
+    <div>
+      <h3>Full circle, free flowing, and close</h3>
+      <div class="lead">Both</div>
+      <div class="body">
+        <p>Everyone back into one circle. Open and unscripted: whoever is moved
+        to speak, speaks. Same principles, no turns, no structure. One of you
+        holds it lightly.</p>
+        <p>At around 19:24, bring it to the close: one sentence each, somatic.
+        How am I right now, what am I taking with me. Model it short by going
+        first. Then thank people, mention the next evening if there is one, and
+        let the room stay for tea.</p>
+      </div>
+      <div class="note"><b>The tightest moment in the plan.</b> At seven to
+      twelve people the closing round costs four to six minutes, which leaves
+      about ten for the open circle. Enough for a taste of it, not for a real
+      one. If the free flowing circle is the part you most want, take five
+      minutes from the threes and five from the principles and give this beat
+      twenty five.</div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 4. STILL OPEN ============ -->
+
+<section>
+  <h2><span class="num">Four</span>Still to settle</h2>
+  <p class="lede">The pair exercises above are a proposal, not an agreement. These are the calls to make together before the day.</p>
+
+  <div class="open">
+    <h3>The pair exercises in detail <span class="badge">Not discussed yet</span></h3>
+    <div class="body">
+      <p>What is written for 18:05 and 18:35 is one workable version: three
+      layers first, impact second, ping pong as the engine of both. The open
+      part is whether the ping pong is the right form, whether the two rounds
+      should have different partners, and whether an eye contact or silence beat
+      belongs between them.</p>
+    </div>
+  </div>
+
+  <div class="open">
+    <h3>Touch in the walking segment <span class="badge">Safety call</span></h3>
+    <div class="body">
+      <p>Greeting with feet and elbows, and standing back to back, are in the
+      plan as dictated. In a room of strangers this needs an explicit consent
+      frame and an opt out that genuinely costs nothing. Decide who frames it,
+      in what words, and whether the back to back closing stays if the room feels
+      shy.</p>
+    </div>
+  </div>
+
+  <div class="open">
+    <h3>Four principles, or five <span class="badge">Content</span></h3>
+    <div class="body">
+      <p>Curiosity instead of conclusion is the strongest of the missing
+      candidates. Either it becomes a fifth principle at the open, which costs
+      four more minutes of talking, or it arrives as a move inside pair round
+      two, which costs nothing. Pick one.</p>
+    </div>
+  </div>
+
+  <div class="open">
+    <h3>How many people <span class="badge">Not known yet</span></h3>
+    <div class="body">
+      <p>We are aiming for seven to twelve, and the room holds about twelve, but
+      the real number will not be known until the day. The timings above are cut
+      for the middle of that range. Rather than guessing now, agree the two
+      branches: what changes if seven arrive, and what changes if sixteen do.
+      The scaling notes on the opening circle and on the threes are the two
+      places it bites.</p>
+    </div>
+  </div>
+
+  <div class="open">
+    <h3>Music, and who owns the clock <span class="badge">Practical</span></h3>
+    <div class="body">
+      <p>Music for arrival, for the ground and water movement, for shaking, and
+      something quiet for the break. Diana curates. Separately, one of you owns
+      time for the whole evening, and it is not the person leading the beat.</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  Circling &amp; Authentic Relating with Dmitrijs &amp; Diana · Üks Maja, Valdeku 66, Tallinn · Sunday 16 August, 16:30
+</footer>
+
+</div>
+</body>
+</html>

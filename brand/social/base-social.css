@@ -1,0 +1,45 @@
+/* Shared type + avatar styles for square / story formats.
+   Covers use ../covers/base.css instead — that one hard-codes 1920x1005. */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { overflow: hidden; }
+
+.frame {
+  position: relative;
+  background-color: #f3ece1;
+  background-repeat: no-repeat;
+  overflow: hidden;
+}
+
+.kicker {
+  font-family: 'Montserrat', sans-serif; font-weight: 600;
+  letter-spacing: 0.4em; text-transform: uppercase; color: #c2571f;
+}
+.title {
+  font-family: 'Playfair Display', serif; font-weight: 700;
+  line-height: 1.1; color: #45372c;
+}
+.title em { font-style: italic; font-weight: 600; color: #c2571f; }
+.subtitle {
+  font-family: 'Playfair Display', serif; font-style: italic; font-weight: 500;
+  color: #7a6a58;
+}
+.rule { height: 3px; background: #c2571f; opacity: 0.85; }
+.details {
+  font-family: 'Montserrat', sans-serif; font-weight: 500;
+  letter-spacing: 0.04em; color: #55463a;
+}
+.details b { font-weight: 600; color: #c2571f; }
+
+.hosts { display: flex; align-items: center; }
+.host { text-align: center; }
+.host .avatar {
+  border-radius: 50%; object-fit: cover;
+  border: 5px solid rgba(255,252,246,0.95);
+  box-shadow: 0 8px 22px rgba(0,0,0,0.22);
+}
+.host .avatar.dmitrijs { object-position: 50% 45%; }
+.host .avatar.diana { object-position: 50% 38%; }
+.host .name {
+  font-family: 'Montserrat', sans-serif; font-weight: 500;
+  color: #55463a; letter-spacing: 0.06em;
+}

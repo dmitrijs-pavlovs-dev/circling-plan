@@ -1,0 +1,28 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html, body { width: 1920px; height: 1005px; overflow: hidden; }
+.cover {
+  position: relative;
+  width: 1920px;
+  height: 1005px;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.abs { position: absolute; }
+.hosts-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+}
+.avatars { display: flex; flex-shrink: 0; }
+.avatar {
+  width: 116px;
+  height: 116px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 5px solid rgba(255,255,255,0.95);
+  box-shadow: 0 8px 22px rgba(0,0,0,0.30);
+}
+.avatar.dmitrijs { object-position: 50% 45%; }
+.avatar.diana { object-position: 50% 38%; }
+.avatar + .avatar { margin-left: -28px; }

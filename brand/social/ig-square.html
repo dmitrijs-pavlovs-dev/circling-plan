@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html><head>
+<meta charset="utf-8">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,500&family=Montserrat:wght@400;500;600&display=block" rel="stylesheet">
+<link rel="stylesheet" href="base-social.css">
+<style>
+html, body { width: 1080px; height: 1080px; }
+.frame {
+  width: 1080px; height: 1080px;
+  background-image: url("../bg/16-people-topview.png");
+  background-size: 1560px auto;
+  background-position: center -30px;
+}
+/* Bottom-up scrim: art breathes on top, text sits on calm cream below. */
+.fade {
+  position: absolute; inset: 0;
+  background: linear-gradient(180deg,
+    rgba(243,236,225,0) 30%,
+    rgba(243,236,225,0.72) 44%,
+    rgba(243,236,225,0.97) 56%);
+}
+.block { position: absolute; left: 80px; right: 80px; bottom: 74px; text-align: center; }
+.kicker { font-size: 22px; }
+.title { font-size: 76px; margin: 20px 0 14px; }
+.subtitle { font-size: 34px; }
+.rule { width: 110px; margin: 26px auto; }
+.hosts { justify-content: center; gap: 44px; margin-bottom: 26px; }
+.host .avatar { width: 104px; height: 104px; }
+.host .name { margin-top: 9px; font-size: 21px; }
+.details { font-size: 26px; line-height: 1.7; }
+</style>
+</head><body>
+<div class="frame">
+  <div class="fade"></div>
+  <div class="block">
+    <div class="kicker">Circling · Authentic Relating</div>
+    <div class="title">Slow down, <em>be seen</em>,<br>connect <em>for real</em></div>
+    <div class="subtitle">a journey of transformation</div>
+    <div class="rule"></div>
+    <div class="hosts">
+      <div class="host">
+        <img class="avatar diana" src="../avatars/diana.png">
+        <div class="name">Diana</div>
+      </div>
+      <div class="host">
+        <img class="avatar dmitrijs" src="../avatars/dmitrijs-face.png">
+        <div class="name">Dmitrijs</div>
+      </div>
+    </div>
+    <div class="details"><b>Sunday, 16 August · 16:30</b><br>Üks Maja · Valdeku 66, Tallinn</div>
+  </div>
+</div>
+</body></html>
