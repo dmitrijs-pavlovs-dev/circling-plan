@@ -85,6 +85,137 @@ Diana should post it, and lead with the body:
 
 ---
 
+## Facebook group post: the five principles
+
+A value-first post rather than an announcement. It gives the group something
+worth reading on its own, and the event sits at the bottom where it belongs.
+Better in groups where a plain event post would read as advertising, and it can
+go up earlier in the run-up than a "this Sunday" post can.
+
+**Formatting note.** Facebook has no bold or italics, so this is written to
+work as plain text. Keep the blank lines, they are doing the work that bold
+would do. Paste it with the line breaks intact.
+
+**Note on the count.** This says five. The programme currently names four, with
+"curiosity instead of conclusion" listed as the open candidate. Posting this
+settles that question in public, so either add it to the spoken open on the
+night or hold it as the third permitted move in pairs round two. The cheap
+option is the second one.
+
+> Hi everyone. Dmitrijs and Diana here.
+>
+> We host circling and authentic relating evenings in Tallinn, and at the start
+> of each one we say a few things out loud. Most circling and authentic relating
+> traditions have a list like this. These are the five we keep coming back to,
+> in our own words rather than borrowed whole, and the last one is usually
+> missing from the lists.
+>
+> 1. WELCOME EVERYTHING, AND TRUST YOUR EXPERIENCE
+>
+> Not turning what is here into something else first. Opening perception,
+> looking at what is actually present, with curiosity rather than judgment.
+>
+> Some things get taught out of us early. If anger had to be hidden growing up,
+> contact with anger goes thin, and welcoming it back takes longer. That is
+> often where the interesting part is.
+>
+> Alongside welcoming there is trusting. Shame and discomfort are hard for us to
+> give room to. "Okay, this is what is present right now." What we try to bring
+> is a space where that is allowed.
+>
+> "Nothing that arises here is a mistake."
+>
+> 2. THE PRESENT MOMENT, RATHER THAN THE STORY
+>
+> Our first move is usually the explanation. We offer the present instead, and
+> the easiest door is the body: the breath, the weight, the impulse to move
+> toward someone or away from them.
+>
+> We find it useful to separate three things.
+>
+> Sensation. My cheeks are hot. Something is tight here.
+> Feeling. I am angry. I am warm toward you.
+> Story. What I make it mean, about myself or about you.
+>
+> Stories are not forbidden. They just tend to carry us out of the moment and
+> away from what is underneath it.
+>
+> "Right now, in your body, what is here?"
+>
+> 3. OWN IT, REVEAL IT, SHARE THE IMPACT
+>
+> The feeling is mine. Not a verdict on anyone else, a report from the inside.
+> "I feel something when you say that."
+>
+> Then the step outward. Noticing something quietly is one thing. Saying it is
+> another, and that step is the one we welcome most.
+>
+> Sharing the impact is the other half: what it is like to be with what somebody
+> just said. "I feel X when you Y." Never a conclusion about who they are.
+>
+> "Hearing that, I notice…"
+>
+> 4. NOBODY HERE NEEDS FIXING
+>
+> Honouring that each person can hold their own state. Which means letting go of
+> advice, of cheering up, of smoothing discomfort, of solving an emotion.
+>
+> Here is the part we like most. The urge to rescue someone is real, and it is
+> worth saying out loud rather than acting on. "I notice a strong wish to help
+> you right now." That one sentence is most of the practice in a single move.
+>
+> "You can be moved by someone without doing anything about it."
+>
+> 5. CURIOSITY INSTEAD OF CONCLUSION
+>
+> This is the one usually left off. Number two handles the story I tell about
+> myself. It says nothing about the story I tell about you.
+>
+> So: checking the read out loud instead of quietly keeping it. "You seem far
+> away to me, is that true for you?" Sometimes the answer is no, and something
+> else can arrive.
+>
+> "Ask, rather than land on it."
+>
+> None of these are rules and none of it is a test. They are simple guidelines,
+> the conditions we try to hold so that honesty is easy rather than brave. 💜
+>
+> If you would like to practise them with us, our next evening is Sunday 16
+> August, 16:30 to 19:30 at Üks Maja in Tallinn. Three hours: movement and
+> breath to arrive, then exercises in pairs and small groups, then an open
+> circle. No experience needed. 🕯
+>
+> 🗓 Sunday 16 August · 16:30
+> 📍 Üks Maja · Valdeku 66, Tallinn
+> [link]
+
+**Short version,** for groups with a length limit or a strict promo rule. Drop
+the numbered detail and keep the five headings plus the quotable line under
+each:
+
+> Five things we say out loud at the start of every circling evening we host.
+> In our own words, not borrowed whole.
+>
+> 1. Welcome everything, and trust your experience.
+> "Nothing that arises here is a mistake."
+>
+> 2. The present moment, rather than the story.
+> "Right now, in your body, what is here?"
+>
+> 3. Own it, reveal it, share the impact.
+> "I feel X when you Y." Never a conclusion about who someone is.
+>
+> 4. Nobody here needs fixing.
+> The urge to rescue someone is worth saying out loud rather than acting on.
+>
+> 5. Curiosity instead of conclusion.
+> "You seem far away to me, is that true for you?"
+>
+> Simple guidelines, so that honesty is easy rather than brave. Our next evening
+> is Sunday 16 August, 16:30 to 19:30, Üks Maja, Tallinn. 🕯 [link]
+
+---
+
 ## Instagram feed caption
 
 Post as a collaboration with Diana so it lands on both profiles.
