@@ -8,3 +8,7 @@ node_modules/
 # Note this only covers brand/out: the archived rounds keep their renders in
 # git, because render.sh doesn't target archive/ and they can't be regenerated.
 brand/out/
+
+# Downloaded third-party meditation transcripts (copyrighted, reference only).
+# The notes.md summarizing them is tracked; the PDFs are not republished.
+research/body-scan-transcripts/*.pdf
