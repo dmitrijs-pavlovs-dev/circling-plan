@@ -146,6 +146,65 @@ relax: fingernails, hands, feet, ankles, pelvis, chest, head. Not a scan you
 rush. At each place the question is gentle and slow, what is it like to feel
 this part relaxing, then staying with that a little.
 
+**The script.** Spoken slowly, with pauses longer than feel natural. The words
+are a shape to speak from, not a text to recite.
+
+> Let yourself settle. Lying down or sitting, whatever your body wants right
+> now. If closing the eyes feels good, let them close.
+>
+> Feel the places where your body touches the ground. The ground is already
+> holding you. There is nothing you have to do to earn that.
+>
+> For the next few minutes there is nowhere to get to and nothing to achieve.
+> We are going to travel through the body, slowly, and simply visit each part.
+> Whatever you find there is welcome: warmth, tension, tingling, heaviness, or
+> nothing much at all. Nothing much is also an answer. Nothing needs to be
+> fixed, and nothing needs to leave.
+>
+> Begin with the feet. The heels resting on the floor, the soles, each toe.
+> Notice whatever is there right now. And ask, softly: what is it like to let
+> the feet relax? Stay with that a moment.
+>
+> Let your attention travel up into the ankles, the calves, the knees. The
+> legs have carried you all day, and now they get to do nothing at all. If
+> somewhere feels tight, you do not have to change it. Let your attention rest
+> there, warm and unhurried.
+>
+> Come up into the thighs, and into the pelvis. Let the whole weight of the
+> pelvis sink toward the ground. This is the base of the body, and it can be
+> heavy here, fully supported.
+>
+> The belly. Let it be soft. Let the breath move it however it wants. If a
+> feeling lives here right now, restlessness, calm, something without a name,
+> it can stay. Give it room, and keep breathing.
+>
+> The chest, and the heart. Notice what the weather is like in there at this
+> moment. Whatever you meet, it does not need to be different. See if you can
+> stay beside it the way you would sit beside a friend: not fixing anything,
+> just present, just company.
+>
+> The shoulders. Sometimes the whole day is held here. Invite them to soften
+> toward the ground, and if they soften only a little, that is enough.
+>
+> Let the attention pour down the arms, through the elbows and the wrists,
+> into the hands. The palms, each finger, all the way out to the fingernails.
+> Even the fingernails get a moment of attention tonight. What is it like to
+> feel the hands completely at rest?
+>
+> The neck, and the throat. The jaw: let it unclench, let the teeth part
+> slightly. The face: the cheeks, the small muscles around the eyes, the
+> forehead. The scalp. The whole head, resting.
+>
+> Now feel the body as one whole, from the heels to the top of the head, here,
+> breathing by itself. You are in this room, in this moment, and nothing more
+> is asked of you.
+>
+> *(a long pause here, up to a minute if the room is settled)*
+>
+> When you are ready, let the breath grow a little deeper. Small movements in
+> the fingers and the toes. Take your time, and in your own time, let the eyes
+> open.
+
 This beat is the handover from talking to moving. Keep it soft rather than
 deep. The depth belongs later.
 
