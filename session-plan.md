@@ -147,69 +147,79 @@ rush. At each place the question is gentle and slow, what is it like to feel
 this part relaxing, then staying with that a little.
 
 **The script.** Spoken slowly, with pauses longer than feel natural. The words
-are a shape to speak from, not a text to recite. Built from the current MBSR
-lineage of body scans; the sources and what was borrowed are in
-`research/body-scan-transcripts/notes.md`.
+are a shape to speak from, not a text to recite. Built on Dmitrijs's own
+spoken draft, merged with the MBSR lineage of body scans; the sources and what
+was borrowed are in `research/body-scan-transcripts/notes.md`.
 
-> Let yourself settle. Lying down or sitting, whatever your body wants right
-> now. If closing the eyes feels good, let them close. And if at any point you
-> would rather have them open, that is welcome too. The room stays here, and
-> you can come back to it whenever you like.
+> Let yourself settle. I invite you to lie back on the ground, or stay
+> seated, whatever your body wants right now. If closing the eyes feels good,
+> let them close. And if at any point you would rather have them open, that is
+> welcome too. The room stays here, and you can come back to it whenever you
+> like.
 >
-> Feel the places where your body touches the ground. The ground is already
-> holding you. There is nothing you have to do to earn that.
+> The invitation tonight is to fall into your presence. Feel the places where
+> your body touches the ground. The ground is already holding you. There is
+> nothing you have to do to earn that. And let the breath be as it is. No need
+> to do anything about it. Feel what it is like to be in your body, right
+> here.
 >
 > For the next few minutes there is nowhere to get to and nothing to achieve.
 > We are going to travel through the body, slowly, and simply visit each part.
 > Whatever you find there is welcome: warmth, coolness, tingling, pressure,
 > heaviness, or nothing much at all. Nothing much is also an answer. There is
-> no right way to feel. Nothing needs to be fixed, and nothing needs to leave.
+> no right way to feel.
 >
-> Begin with the feet. The heels resting on the floor, the soles, each toe.
-> Notice whatever is there right now, from the skin all the way through. And
-> ask, softly: what is it like to let the feet relax? Stay with that a moment.
+> Begin all the way down at the toes. The little toes. What happens when we
+> put our attention there? Is it quiet, or is there some life going on, some
+> aliveness? Either one is a full answer.
 >
-> Now take a slightly deeper breath, and as it leaves, let the feet soften out
-> of the spotlight, and let the attention rise into the ankles, the calves,
-> the knees. The legs have carried you all day, and now they get to do nothing
-> at all. If somewhere feels tight, you do not have to change it. Let your
-> attention rest there, warm and unhurried.
+> Take a slightly deeper breath, and as it leaves, let the attention spread
+> through the whole of the feet, the soles, the heels, up into the ankles.
+> What is it like to let the feet relax? Stay with that a moment.
 >
-> Another easy breath, and as it goes, come up into the thighs, and into the
-> pelvis. Let the whole weight of the pelvis sink toward the ground. This is
-> the base of the body, and it can be heavy here, fully supported.
+> Then the shins, and behind them the calves, and the knees. The legs have
+> carried you all day, and now they get to do nothing at all. If somewhere
+> feels tight, you do not have to change it. Rest your attention there, warm
+> and unhurried, and gently invite relaxation.
 >
-> The belly. Let it be soft. Let the breath move it however it wants. If a
-> feeling lives here right now, restlessness, calm, something without a name,
-> it can stay. Give it room, and keep breathing.
+> Another easy breath, and as it goes, come up through the thighs, into the
+> pelvis and the glutes. Let the whole weight of it sink toward the ground.
+> This is the base of the body, and it can be heavy here, fully supported.
+>
+> The stomach. Let it be soft, and let the breath move it however it wants.
+> Here I invite some curiosity: if you meet something new or unexpected, a
+> feeling, something without a name, greet it with warmth. It can stay. Find
+> peace with the way it is right now.
 >
 > And if by now the mind has wandered off, to the day, to a story, to
 > somewhere else entirely, nothing has gone wrong. That is what minds do.
-> Notice where it went, and walk it back gently, to the belly, to the breath.
-> As many times as it takes. Each return is the practice.
+> Notice where it went, and walk it back gently. As many times as it takes.
+> Each return is the practice.
 >
-> The chest, and the heart. Notice what the weather is like in there at this
-> moment. Whatever you meet, it does not need to be different. See if you can
-> stay beside it the way you would sit beside a friend: not fixing anything,
-> just present, just company.
+> Now travel up the midline. The lower back, the spine, and the space between
+> the shoulder blades. If it feels good to move a little here, move a little.
+> You can imagine water, or a soft touch, resting on the shoulder blades and
+> carrying away some of their weight. Feel the weight, if there is any, and
+> let what wants to go, go.
 >
-> The shoulders. Sometimes the whole day is held here. Invite them to soften
-> toward the ground, and if they soften only a little, that is enough.
+> The chest, and the heart. Feel the expansion as the air comes in. Notice
+> what the weather is like in there at this moment. Whatever you meet, it does
+> not need to be different. See if you can stay beside it the way you would
+> sit beside a friend: not fixing anything, just present, just company.
 >
 > One more slow breath, and as it leaves, let the attention pour down the
-> arms, through the elbows and the wrists, into the hands. The palms, each
-> finger, all the way out to the fingernails. Even the fingernails get a
-> moment of attention tonight. What is it like to feel the hands completely at
-> rest?
+> arms, the feeling of the skin, through the elbows and the wrists, into the
+> hands. The palms, each finger, all the way out to the fingernails. What is
+> it like to feel the hands completely at rest?
 >
-> The neck, and the throat. The jaw: let it unclench, let the teeth part
-> slightly. The face: the cheeks, the small muscles around the eyes, the space
-> between the eyebrows, the forehead. The scalp. The whole head, resting.
+> The neck. Notice how it is, and if it wants to move, let it move. The jaw:
+> let it unclench, let the teeth part slightly. The cheekbones, the nose, the
+> small muscles behind the eyes. The forehead. The whole head, resting.
 >
-> Now feel the body as one whole, from the heels to the top of the head, here,
-> breathing by itself. If you like, imagine the breath filling the whole body
-> as it comes in, and leaving from the whole body as it goes out. You are in
-> this room, in this moment, and nothing more is asked of you.
+> Now feel the body as one whole, from the toes to the top of the head, here,
+> breathing by itself. Sensations and feelings arriving, unfolding, passing
+> by, and you here with them. If a quiet thank you toward this body wants to
+> happen, let it. Nothing more is asked of you.
 >
 > *(a long pause here, up to a minute if the room is settled)*
 >

@@ -40,6 +40,33 @@ carried the self-compassion flavor.
 6. **Opt-out permission up front** (Kabat-Zinn's safety note, adapted): eyes
    can stay open or reopen at any point. Matters in a room of strangers.
 
+## Dmitrijs's own draft (15 August 2026)
+
+The final script is rebuilt on a version Dmitrijs spoke aloud, so the words
+sit in his mouth rather than a curriculum's. Kept from his draft, lightly
+edited:
+
+- "The invitation is to fall into your presence" and "let the breath be as it
+  is, no need to do anything about it" in the opening.
+- Starting at the **little toes** with the aliveness question: "is it quiet,
+  or is there some life going on, some aliveness?"
+- The **back**, which every short source script and our earlier version
+  skipped: the spine, the space between the shoulder blades, and the image of
+  water or a soft touch carrying weight off the shoulder blades. The water
+  image also foreshadows the ground-and-water movement beat that follows.
+- Permission to **move a little** (shoulder blades, neck), which suits a beat
+  that hands over from stillness to movement.
+- "Greet it with warmth and curiosity" at the stomach. This quietly plants
+  curiosity, the candidate fifth principle (open question 3 in the plan).
+- The glutes, the cheekbones, the muscles behind the eyes, the feeling of the
+  skin on the arms.
+- The closing drift toward gratitude, made invitational: "if a quiet thank
+  you toward this body wants to happen, let it."
+
+Dictation fixes: "the muscles past the ankles" resolved to the calves,
+"healings" read as "feelings", "overlove" read as "welcome" and folded into
+the closing paragraph.
+
 ## What was deliberately not taken
 
 - The 45-minute MBSR pacing and left-side/right-side leg-by-leg sweep: too
