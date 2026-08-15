@@ -66,20 +66,22 @@
       <h2>Focus Timer</h2>
       <button class="panel-close" data-close="timer" aria-label="Close">✕</button>
     </div>
-    <div class="timer-display" id="timerDisplay">15:00</div>
+    <div class="timer-display" id="timerDisplay">1:00</div>
     <div class="timer-mode">
       <button class="seg active" id="modeCountdown">Countdown</button>
       <button class="seg" id="modeStopwatch">Stopwatch</button>
     </div>
     <div class="timer-presets" id="presets">
-      <button data-min="15" class="preset active">15 min · focus</button>
-      <button data-min="5" class="preset">5</button>
-      <button data-min="10" class="preset">10</button>
-      <button data-min="20" class="preset">20</button>
+      <button data-sec="30" class="preset">30 sec</button>
+      <button data-sec="60" class="preset active">1 min</button>
+      <button data-sec="90" class="preset">90 sec</button>
+      <button data-sec="120" class="preset">2 min</button>
+      <button data-sec="180" class="preset">3 min</button>
+      <button data-sec="600" class="preset">10 min</button>
     </div>
     <div class="timer-adjust">
-      <button id="minusMin">−1 min</button>
-      <button id="plusMin">+1 min</button>
+      <button id="minusSec">−15 sec</button>
+      <button id="plusSec">+15 sec</button>
     </div>
     <div class="timer-controls">
       <button class="big-btn primary" id="timerStart">Start</button>

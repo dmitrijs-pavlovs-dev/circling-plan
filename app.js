@@ -98,7 +98,7 @@ function startClock() {
 /* ---------- Focus Timer ---------- */
 const Timer = (() => {
   let mode = 'countdown';      // 'countdown' | 'stopwatch'
-  let presetSec = 15 * 60;
+  let presetSec = 60;
   let remaining = presetSec;   // countdown
   let elapsed = 0;             // stopwatch
   let running = false;
@@ -145,13 +145,13 @@ const Timer = (() => {
     elapsed = 0;
     render();
   }
-  function setPreset(min) {
-    presetSec = min * 60;
+  function setPreset(sec) {
+    presetSec = sec;
     if (!running) remaining = presetSec;
     render();
   }
-  function adjust(deltaMin) {
-    presetSec = Math.max(60, presetSec + deltaMin * 60);
+  function adjust(deltaSec) {
+    presetSec = Math.max(15, presetSec + deltaSec);
     if (!running || mode === 'countdown') remaining = presetSec;
     render();
   }
@@ -179,8 +179,8 @@ const Timer = (() => {
   function init() {
     $('#timerStart').addEventListener('click', start);
     $('#timerReset').addEventListener('click', reset);
-    $('#plusMin').addEventListener('click', () => adjust(1));
-    $('#minusMin').addEventListener('click', () => adjust(-1));
+    $('#plusSec').addEventListener('click', () => adjust(15));
+    $('#minusSec').addEventListener('click', () => adjust(-15));
     $('#modeCountdown').addEventListener('click', () => {
       $('#modeCountdown').classList.add('active'); $('#modeStopwatch').classList.remove('active'); setMode('countdown');
     });
@@ -191,7 +191,7 @@ const Timer = (() => {
       b.addEventListener('click', () => {
         document.querySelectorAll('#presets .preset').forEach((x) => x.classList.remove('active'));
         b.classList.add('active');
-        setPreset(parseInt(b.dataset.min, 10));
+        setPreset(parseInt(b.dataset.sec, 10));
       });
     });
     render();
