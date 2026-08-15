@@ -331,6 +331,9 @@ body {
 .big-btn:active { transform: scale(0.98); }
 
 /* Music */
+.breath-track { margin-bottom: 18px; padding-bottom: 16px; border-bottom: 1px solid var(--line); }
+.breath-track audio { width: 100%; display: block; }
+.breath-track audio + .track-name { margin-top: 14px; }
 .track-name { text-align: center; color: var(--ink-soft); margin-bottom: 10px; font-size: 0.9rem; font-style: italic; }
 #player { width: 100%; aspect-ratio: 16 / 9; border-radius: 8px; overflow: hidden; background: #000; margin-bottom: 12px; }
 #player iframe { width: 100%; height: 100%; border: 0; }
