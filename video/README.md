@@ -69,5 +69,9 @@ node render.js    # 5,146 frames at 1 fps via headless Chrome
 ffmpeg -framerate 1 -i frames/%05d.jpg -c:v libx264 -preset medium \
   -tune stillimage -crf 22 -pix_fmt yuv420p -r 30 video-silent.mp4
 ffmpeg -i video-silent.mp4 -i ../audio/breathing-full.mp3 \
-  -c:v copy -c:a aac -b:a 160k -shortest countdown.mp4
+  -c:v copy -c:a aac -b:a 160k -shortest -movflags +faststart countdown.mp4
 ```
+
+**Keep `-movflags +faststart`.** Without it ffmpeg writes the `moov` atom
+after the video data, and browsers cannot seek until the whole file has
+downloaded, so the scrubber refuses to jump to the start or end.
