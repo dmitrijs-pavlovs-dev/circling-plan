@@ -36,10 +36,11 @@ function arg(name, fallback) {
   }
 
   const total = Math.ceil(duration);
+  const FPS = Number(arg("--fps", 1));
   const times = test
     ? [0, Math.round(total * 0.2), Math.round(total * 0.5), Math.round(total * 0.85)]
         .map((t, i) => ({ t, name: `test-${i}` }))
-    : Array.from({ length: total }, (_, i) => ({ t: i, name: String(i).padStart(5, '0') }));
+    : Array.from({ length: total * FPS }, (_, i) => ({ t: i / FPS, name: String(i).padStart(6, "0") }));
 
   let n = 0;
   for (const { t, name } of times) {

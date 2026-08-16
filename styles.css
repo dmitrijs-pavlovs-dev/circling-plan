@@ -333,7 +333,12 @@ body {
 /* Music */
 .breath-track { margin-bottom: 4px; }
 .breath-track audio { width: 100%; display: block; }
-.breath-track audio + .track-name { margin-top: 14px; }
+.breath-track audio + .track-name,
+.breath-track video + .track-name { margin-top: 14px; }
+.breath-track video {
+  width: 100%; display: block; border-radius: 8px;
+  background: #000; aspect-ratio: 16 / 9;
+}
 .breath-note { margin-top: 14px; color: var(--ink-soft); font-size: 0.8rem; text-align: center; }
 .track-name { text-align: center; color: var(--ink-soft); margin-bottom: 10px; font-size: 0.9rem; font-style: italic; }
 #player { width: 100%; aspect-ratio: 16 / 9; border-radius: 8px; overflow: hidden; background: #000; margin-bottom: 12px; }

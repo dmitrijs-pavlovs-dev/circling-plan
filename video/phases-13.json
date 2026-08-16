@@ -1,0 +1,75 @@
+{
+ "duration": 769.28,
+ "phases": [
+  {
+   "s": 0.0,
+   "e": 15.0,
+   "type": "intro",
+   "label": "Settle in",
+   "prompt": "Lie down and let the body soften"
+  },
+  {
+   "s": 15.0,
+   "e": 163.5,
+   "type": "breathing",
+   "label": "Round 1 of 3",
+   "prompt": "Breathe fully, in and out"
+  },
+  {
+   "s": 163.5,
+   "e": 226.01,
+   "type": "hold",
+   "label": "Breath hold",
+   "prompt": "Exhale and hold, soften"
+  },
+  {
+   "s": 226.01,
+   "e": 260.0,
+   "type": "recovery",
+   "label": "Recovery",
+   "prompt": "Deep breath in, hold, release"
+  },
+  {
+   "s": 260.0,
+   "e": 408.84,
+   "type": "breathing",
+   "label": "Round 2 of 3",
+   "prompt": "Breathe fully, in and out"
+  },
+  {
+   "s": 408.84,
+   "e": 498.84,
+   "type": "hold",
+   "label": "Breath hold",
+   "prompt": "Exhale and hold, soften"
+  },
+  {
+   "s": 498.84,
+   "e": 509.13,
+   "type": "recovery",
+   "label": "Recovery",
+   "prompt": "Deep breath in, hold, release"
+  },
+  {
+   "s": 509.13,
+   "e": 658.87,
+   "type": "breathing",
+   "label": "Round 3 of 3",
+   "prompt": "Breathe fully, in and out"
+  },
+  {
+   "s": 658.87,
+   "e": 748.87,
+   "type": "hold",
+   "label": "Breath hold",
+   "prompt": "Exhale and hold, soften"
+  },
+  {
+   "s": 748.87,
+   "e": 769.28,
+   "type": "recovery",
+   "label": "Rest",
+   "prompt": "Let the breath return on its own"
+  }
+ ]
+}

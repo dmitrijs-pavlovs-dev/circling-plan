@@ -15,8 +15,10 @@ brand/out/
 audio/breathing-full-guided.mp3
 audio/breathing-full.mp3
 
-# Rendered countdown video, ~55MB+. Rebuild with video/README.md.
+# Rendered countdown videos. Only the published 12:49 cut is tracked; the
+# full-length renders are large and rebuildable, see video/README.md.
 video/*.mp4
+!video/breathwork-13.mp4
 
 # Downloaded third-party meditation transcripts (copyrighted, reference only).
 # The notes.md summarizing them is tracked; the PDFs are not republished.

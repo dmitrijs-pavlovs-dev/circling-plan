@@ -33,6 +33,7 @@ jobs:
           cp index.html styles.css app.js session-plan.md program.html _site/
           cp research.md _site/ 2>/dev/null || true
           cp -r audio _site/
+          cp -r video _site/
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3

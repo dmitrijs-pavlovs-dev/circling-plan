@@ -54,12 +54,17 @@
     font-family: 'Playfair Display', serif; font-style: italic;
     font-size: 44px; color: var(--accent);
   }
-  /* breath pacer: dot travelling the ring, one lap per breath cycle */
-  #pacerDot { display: none; }
-  #pacerDot.on { display: block; }
-  .breath-rate {
-    margin-top: 16px; font-size: 22px; font-weight: 500;
-    letter-spacing: 0.16em; text-transform: uppercase; color: var(--muted);
+  /* breath pacer: orb grows on the inhale, shrinks on the exhale */
+  #pacerOrb, #pacerEdge { display: none; }
+  #pacerOrb.on, #pacerEdge.on { display: block; }
+  .breath-cue {
+    margin-top: 16px; font-size: 30px; font-weight: 600;
+    letter-spacing: 0.22em; text-transform: uppercase;
+  }
+  .breath-cue .sub {
+    display: block; margin-top: 10px;
+    font-size: 20px; font-weight: 500; letter-spacing: 0.16em;
+    color: var(--muted);
   }
   .next {
     margin-top: 20px; font-size: 24px; font-weight: 500; color: var(--muted);
@@ -89,7 +94,9 @@
         stroke-width="7" stroke-linecap="round"
         transform="rotate(-90 230 230)"
         stroke-dasharray="1332" stroke-dashoffset="1332" />
-      <circle id="pacerDot" cx="230" cy="18" r="13" fill="var(--accent)" />
+      <circle id="pacerOrb" cx="230" cy="230" r="80" fill="var(--accent)" opacity="0.13" />
+      <circle id="pacerEdge" cx="230" cy="230" r="80" fill="none"
+        stroke="var(--accent)" stroke-width="2.5" opacity="0.5" />
     </svg>
     <div class="ring-center">
       <div class="countdown" id="countdown">--:--</div>
@@ -97,7 +104,7 @@
     </div>
   </div>
   <div class="prompt" id="prompt"></div>
-  <div class="breath-rate" id="breathRate"></div>
+  <div class="breath-cue" id="breathCue"></div>
   <div class="next" id="next"></div>
   <div class="spacer"></div>
   <div class="timeline">
@@ -143,7 +150,10 @@ let PHASES = [
 const RING_LEN = 2 * Math.PI * 212;
 // Measured by autocorrelation: 5.71 s per breath (~10.5/min), identical in
 // all 8 rounds, and exactly 8 beats of the 83.4 bpm grid.
-const BREATH_CYCLE = 5.71;
+const BREATH_CYCLE = 5.712;
+// Source describes a 3-part breath: 2 parts inhale, 1 part relaxed exhale.
+const INHALE_FRAC = 2 / 3;
+const R_MIN = 62, R_MAX = 196;   // orb radius inside the 212 progress ring
 
 function fmt(sec) {
   sec = Math.max(0, Math.round(sec));
@@ -200,18 +210,37 @@ window.seek = function (t) {
   ring.setAttribute('stroke', accent);
   ring.setAttribute('stroke-dashoffset', RING_LEN * (1 - inPhase / phaseDur));
 
-  const dot = document.getElementById('pacerDot');
-  const rate = document.getElementById('breathRate');
+  const orb = document.getElementById('pacerOrb');
+  const edge = document.getElementById('pacerEdge');
+  const cue = document.getElementById('breathCue');
   if (p.type === 'breathing') {
-    const ang = ((inPhase % BREATH_CYCLE) / BREATH_CYCLE) * 2 * Math.PI - Math.PI / 2;
-    dot.setAttribute('cx', (230 + 212 * Math.cos(ang)).toFixed(2));
-    dot.setAttribute('cy', (230 + 212 * Math.sin(ang)).toFixed(2));
-    dot.setAttribute('fill', accent);
-    dot.classList.add('on');
-    rate.textContent = '≈ 10.5 breaths / min · 5.7 s cycle';
+    // 3-part breath: two parts in, one part out. Cosine easing so the orb
+    // slows at the turnaround instead of snapping direction.
+    const ph = (inPhase % BREATH_CYCLE) / BREATH_CYCLE;
+    const ease = (x) => 0.5 - 0.5 * Math.cos(Math.PI * Math.min(Math.max(x, 0), 1));
+    let scale, label, remain;
+    if (ph < INHALE_FRAC) {
+      const u = ph / INHALE_FRAC;
+      scale = R_MIN + (R_MAX - R_MIN) * ease(u);
+      label = 'Breathe in';
+      remain = (INHALE_FRAC - ph) * BREATH_CYCLE;
+    } else {
+      const u = (ph - INHALE_FRAC) / (1 - INHALE_FRAC);
+      scale = R_MAX - (R_MAX - R_MIN) * ease(u);
+      label = 'Breathe out';
+      remain = (1 - ph) * BREATH_CYCLE;
+    }
+    orb.setAttribute('r', scale.toFixed(2));
+    edge.setAttribute('r', scale.toFixed(2));
+    orb.setAttribute('fill', accent);
+    edge.setAttribute('stroke', accent);
+    orb.classList.add('on'); edge.classList.add('on');
+    cue.style.color = accent;
+    cue.innerHTML = label +
+      '<span class="sub">' + remain.toFixed(1) + ' s</span>';
   } else {
-    dot.classList.remove('on');
-    rate.textContent = '';
+    orb.classList.remove('on'); edge.classList.remove('on');
+    cue.textContent = '';
   }
 
   const nxt = PHASES[idx + 1];
