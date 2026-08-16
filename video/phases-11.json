@@ -1,5 +1,5 @@
 {
- "duration": 735.01,
+ "duration": 653.6,
  "phases": [
   {
    "s": 0.0,
@@ -10,63 +10,63 @@
   },
   {
    "s": 15.0,
-   "e": 152.07,
+   "e": 134.94,
    "type": "breathing",
    "label": "Round 1 of 3",
    "prompt": "Breathe fully, in and out"
   },
   {
-   "s": 152.07,
-   "e": 214.58,
+   "s": 134.94,
+   "e": 197.45,
    "type": "hold",
    "label": "Breath hold",
    "prompt": "Exhale and hold, soften"
   },
   {
-   "s": 214.58,
-   "e": 248.58,
+   "s": 197.45,
+   "e": 231.44,
    "type": "recovery",
    "label": "Recovery",
    "prompt": "Deep breath in, hold, release"
   },
   {
-   "s": 248.58,
-   "e": 386.0,
+   "s": 231.44,
+   "e": 351.72,
    "type": "breathing",
    "label": "Round 2 of 3",
    "prompt": "Breathe fully, in and out"
   },
   {
-   "s": 386.0,
-   "e": 476.0,
+   "s": 351.72,
+   "e": 426.72,
    "type": "hold",
    "label": "Breath hold",
    "prompt": "Exhale and hold, soften"
   },
   {
-   "s": 476.0,
-   "e": 486.28,
+   "s": 426.72,
+   "e": 437.01,
    "type": "recovery",
    "label": "Recovery",
    "prompt": "Deep breath in, hold, release"
   },
   {
-   "s": 486.28,
-   "e": 624.6,
+   "s": 437.01,
+   "e": 558.19,
    "type": "breathing",
    "label": "Round 3 of 3",
    "prompt": "Breathe fully, in and out"
   },
   {
-   "s": 624.6,
-   "e": 714.6,
+   "s": 558.19,
+   "e": 633.19,
    "type": "hold",
    "label": "Breath hold",
    "prompt": "Exhale and hold, soften"
   },
   {
-   "s": 714.6,
-   "e": 735.01,
+   "s": 633.19,
+   "e": 653.6,
    "type": "recovery",
    "label": "Rest",
    "prompt": "Let the breath return on its own"
