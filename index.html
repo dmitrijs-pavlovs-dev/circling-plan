@@ -35,6 +35,9 @@
     <button class="dock-btn" data-panel="timer" aria-expanded="false">
       <span class="dock-icon">⏱</span><span class="dock-label">Timer</span>
     </button>
+    <button class="dock-btn" data-panel="breath" aria-expanded="false">
+      <span class="dock-icon">◯</span><span class="dock-label">Breath</span>
+    </button>
     <button class="dock-btn" data-panel="music" aria-expanded="false">
       <span class="dock-icon">♪</span><span class="dock-label">Music</span>
     </button>
@@ -77,6 +80,7 @@
       <button data-sec="90" class="preset">90 sec</button>
       <button data-sec="120" class="preset">2 min</button>
       <button data-sec="180" class="preset">3 min</button>
+      <button data-sec="240" class="preset">4 min</button>
       <button data-sec="600" class="preset">10 min</button>
     </div>
     <div class="timer-adjust">
@@ -89,21 +93,26 @@
     </div>
   </section>
 
+  <!-- Breath panel -->
+  <section class="panel" id="panel-breath" aria-hidden="true">
+    <div class="panel-head">
+      <h2>Breathwork</h2>
+      <button class="panel-close" data-close="breath" aria-label="Close">✕</button>
+    </div>
+    <div class="breath-track">
+      <div class="track-name">15 min · music only</div>
+      <audio id="breath15" src="audio/breathing-15-music.mp3" preload="none" controls></audio>
+      <div class="track-name">29 min · with guidance</div>
+      <audio id="breathShortGuided" src="audio/breathing-short-guided.mp3" preload="none" controls></audio>
+    </div>
+    <p class="breath-note">Both are 3 rounds, holds of 1:00, 1:30 and 1:30.</p>
+  </section>
+
   <!-- Music panel -->
   <section class="panel" id="panel-music" aria-hidden="true">
     <div class="panel-head">
       <h2>Music</h2>
       <button class="panel-close" data-close="music" aria-label="Close">✕</button>
-    </div>
-    <div class="breath-track">
-      <div class="track-name">Breathing · full practice</div>
-      <audio id="breathAudio" src="audio/breathing.mp3" preload="none" controls></audio>
-      <div class="track-name">Breathing · without fire breath</div>
-      <audio id="breathAudioCalm" src="audio/breathing-no-fire.mp3" preload="none" controls></audio>
-      <div class="track-name">Breathing · full, shorter holds (new)</div>
-      <audio id="breathAudioShort" src="audio/breathing-short.mp3" preload="none" controls></audio>
-      <div class="track-name">Breathing · no fire, shorter holds (new)</div>
-      <audio id="breathAudioCalmShort" src="audio/breathing-no-fire-short.mp3" preload="none" controls></audio>
     </div>
     <div class="track-name" id="trackName">Nicola Cruz — Cumbia del Olvido</div>
     <div id="player"></div>

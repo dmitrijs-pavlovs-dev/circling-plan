@@ -1,0 +1,16 @@
+{
+ "duration": 901.33,
+ "note": "Phase map for the 15 min cut (audio/breathing-15-music.mp3). Times are in the assembled track, derived from the segment plan in build15.py.",
+ "phases": [
+  {"s": 0,      "e": 15.00,  "type": "intro",      "label": "Settle in",     "prompt": "Lie down and let the body soften"},
+  {"s": 15.00,  "e": 238.47, "type": "breathing",  "label": "Round 1 of 3",  "prompt": "Breathe fully, in and out"},
+  {"s": 238.47, "e": 300.98, "type": "hold",       "label": "Breath hold",   "prompt": "Exhale and hold, soften"},
+  {"s": 300.98, "e": 335.00, "type": "recovery",   "label": "Recovery",      "prompt": "Deep breath in, hold, release"},
+  {"s": 335.00, "e": 512.38, "type": "breathing",  "label": "Round 2 of 3",  "prompt": "Breathe fully, in and out"},
+  {"s": 512.38, "e": 602.38, "type": "hold",       "label": "Breath hold",   "prompt": "Exhale and hold, soften"},
+  {"s": 602.38, "e": 612.66, "type": "recovery",   "label": "Recovery",      "prompt": "Deep breath in, hold, release"},
+  {"s": 612.66, "e": 790.92, "type": "breathing",  "label": "Round 3 of 3",  "prompt": "Breathe fully, in and out"},
+  {"s": 790.92, "e": 880.92, "type": "hold",       "label": "Breath hold",   "prompt": "Exhale and hold, soften"},
+  {"s": 880.92, "e": 901.33, "type": "recovery",   "label": "Rest",          "prompt": "Let the breath return on its own"}
+ ]
+}

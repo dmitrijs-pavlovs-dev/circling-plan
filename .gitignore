@@ -9,6 +9,15 @@ node_modules/
 # git, because render.sh doesn't target archive/ and they can't be regenerated.
 brand/out/
 
+# Full-length (86 min) breathwork audio, ~80MB each. Only the 29 min short
+# cuts are published; the full versions stay local. Rebuild them from the
+# source download with the steps in video/README.md.
+audio/breathing-full-guided.mp3
+audio/breathing-full.mp3
+
+# Rendered countdown video, ~55MB+. Rebuild with video/README.md.
+video/*.mp4
+
 # Downloaded third-party meditation transcripts (copyrighted, reference only).
 # The notes.md summarizing them is tracked; the PDFs are not republished.
 research/body-scan-transcripts/*.pdf

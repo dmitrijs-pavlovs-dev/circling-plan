@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>Breathwork countdown</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --cream: #f3ece1;
+    --ink: #45372c;
+    --accent: #c2571f;
+    --muted: #7a6a58;
+    --track: #e2d7c6;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html, body { width: 1920px; height: 1080px; overflow: hidden; }
+  body {
+    background: radial-gradient(1200px 800px at 50% 38%, #f8f3ea 0%, var(--cream) 70%);
+    font-family: 'Montserrat', sans-serif;
+    color: var(--ink);
+  }
+  .frame {
+    width: 1920px; height: 1080px;
+    display: flex; flex-direction: column; align-items: center;
+    padding: 64px 0 56px;
+  }
+  .kicker {
+    font-size: 22px; font-weight: 500; letter-spacing: 0.42em;
+    text-transform: uppercase; color: var(--muted);
+  }
+  .phase-label {
+    margin-top: 34px;
+    font-family: 'Playfair Display', serif;
+    font-size: 68px; font-weight: 600; color: var(--ink);
+  }
+  .ring-wrap { position: relative; margin-top: 40px; width: 460px; height: 460px; }
+  .ring-wrap svg { position: absolute; inset: 0; }
+  .ring-center {
+    position: absolute; inset: 0;
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+  }
+  .countdown {
+    font-size: 118px; font-weight: 600; font-variant-numeric: tabular-nums;
+    letter-spacing: 0.02em; line-height: 1;
+  }
+  .phase-total {
+    margin-top: 14px; font-size: 24px; font-weight: 500;
+    color: var(--muted); font-variant-numeric: tabular-nums;
+  }
+  .prompt {
+    margin-top: 44px;
+    font-family: 'Playfair Display', serif; font-style: italic;
+    font-size: 44px; color: var(--accent);
+  }
+  /* breath pacer: dot travelling the ring, one lap per breath cycle */
+  #pacerDot { display: none; }
+  #pacerDot.on { display: block; }
+  .breath-rate {
+    margin-top: 16px; font-size: 22px; font-weight: 500;
+    letter-spacing: 0.16em; text-transform: uppercase; color: var(--muted);
+  }
+  .next {
+    margin-top: 20px; font-size: 24px; font-weight: 500; color: var(--muted);
+    font-variant-numeric: tabular-nums;
+  }
+  .spacer { flex: 1; }
+  .timeline { width: 1600px; }
+  .segments { display: flex; gap: 5px; height: 12px; }
+  .seg { position: relative; height: 100%; border-radius: 999px; overflow: hidden; }
+  .seg .base { position: absolute; inset: 0; opacity: 0.22; }
+  .seg .fill { position: absolute; top: 0; bottom: 0; left: 0; width: 0; }
+  .times {
+    margin-top: 16px; display: flex; justify-content: space-between;
+    font-size: 24px; font-weight: 500; color: var(--muted);
+    font-variant-numeric: tabular-nums;
+  }
+</style>
+</head>
+<body>
+<div class="frame">
+  <div class="kicker">Soulful Events · Breathwork</div>
+  <div class="phase-label" id="phaseLabel">—</div>
+  <div class="ring-wrap">
+    <svg viewBox="0 0 460 460">
+      <circle cx="230" cy="230" r="212" fill="none" stroke="var(--track)" stroke-width="7" />
+      <circle id="ringFill" cx="230" cy="230" r="212" fill="none" stroke="var(--accent)"
+        stroke-width="7" stroke-linecap="round"
+        transform="rotate(-90 230 230)"
+        stroke-dasharray="1332" stroke-dashoffset="1332" />
+      <circle id="pacerDot" cx="230" cy="18" r="13" fill="var(--accent)" />
+    </svg>
+    <div class="ring-center">
+      <div class="countdown" id="countdown">--:--</div>
+      <div class="phase-total" id="phaseTotal"></div>
+    </div>
+  </div>
+  <div class="prompt" id="prompt"></div>
+  <div class="breath-rate" id="breathRate"></div>
+  <div class="next" id="next"></div>
+  <div class="spacer"></div>
+  <div class="timeline">
+    <div class="segments" id="segments"></div>
+    <div class="times"><span id="elapsed">0:00</span><span id="total"></span></div>
+  </div>
+</div>
+<script>
+let DURATION = 5145.77;
+const COLORS = { intro: '#7a6a58', breathing: '#c2571f', hold: '#45372c', recovery: '#a8773f', meditation: '#7a6a58', closing: '#7a6a58' };
+// Boundaries refined by beat/energy analysis, see beat-analysis.json.
+// Overridable at render time via setPhases(), see render.js --phases.
+let PHASES = [
+  {s:0,       e:317.90,  type:'intro',      label:'Welcome',      prompt:'Settle in and get comfortable'},
+  {s:317.90,  e:541.37,  type:'breathing',  label:'Round 1 of 8', prompt:'Breathe fully, in and out'},
+  {s:541.37,  e:603.88,  type:'hold',       label:'Breath hold',  prompt:'Exhale and hold, soften'},
+  {s:603.88,  e:639.90,  type:'recovery',   label:'Recovery',     prompt:'Deep breath in, hold, release'},
+  {s:639.90,  e:890.23,  type:'breathing',  label:'Round 2 of 8', prompt:'Breathe fully, in and out'},
+  {s:890.23,  e:968.09,  type:'hold',       label:'Breath hold',  prompt:'Exhale and hold, soften'},
+  {s:968.09,  e:991.82,  type:'recovery',   label:'Recovery',     prompt:'Deep breath in, hold, release'},
+  {s:991.82,  e:1227.06, type:'breathing',  label:'Round 3 of 8', prompt:'Breathe fully, in and out'},
+  {s:1227.06, e:1332.06, type:'hold',       label:'Breath hold',  prompt:'Exhale and hold, soften'},
+  {s:1332.06, e:1344.34, type:'recovery',   label:'Recovery',     prompt:'Deep breath in, hold, release'},
+  {s:1344.34, e:1620.47, type:'breathing',  label:'Round 4 of 8', prompt:'Breathe fully, in and out'},
+  {s:1620.47, e:1729.07, type:'hold',       label:'Breath hold',  prompt:'Exhale and hold, soften'},
+  {s:1729.07, e:1751.48, type:'recovery',   label:'Recovery',     prompt:'Deep breath in, hold, release'},
+  {s:1751.48, e:2026.80, type:'breathing',  label:'Round 5 of 8', prompt:'Breathe fully, in and out'},
+  {s:2026.80, e:2154.21, type:'hold',       label:'Breath hold',  prompt:'Exhale and hold, soften'},
+  {s:2154.21, e:2179.49, type:'recovery',   label:'Recovery',     prompt:'Deep breath in, hold, release'},
+  {s:2179.49, e:2466.33, type:'breathing',  label:'Round 6 of 8', prompt:'Breathe fully, in and out'},
+  {s:2466.33, e:2605.56, type:'hold',       label:'Breath hold',  prompt:'Exhale and hold, soften'},
+  {s:2605.56, e:2635.74, type:'recovery',   label:'Recovery',     prompt:'Deep breath in, hold, release'},
+  {s:2635.74, e:2916.45, type:'breathing',  label:'Round 7 of 8', prompt:'Breathe fully, in and out'},
+  {s:2916.45, e:3092.85, type:'hold',       label:'Breath hold',  prompt:'Exhale and hold, soften'},
+  {s:3092.85, e:3103.18, type:'recovery',   label:'Recovery',     prompt:'Deep breath in, hold, release'},
+  {s:3103.18, e:3494.28, type:'breathing',  label:'Round 8 of 8', prompt:'Breathe fully, in and out'},
+  {s:3494.28, e:3655.56, type:'hold',       label:'Breath hold',  prompt:'Exhale and hold, soften'},
+  {s:3655.56, e:3701.28, type:'recovery',   label:'Recovery',     prompt:'Deep breath in, hold, release'},
+  {s:3701.28, e:4242.40, type:'meditation', label:'Deep stillness',  prompt:'Allow your body to fully relax'},
+  {s:4242.40, e:4609.60, type:'meditation', label:'Ethereal flow',   prompt:'Let your awareness gently expand'},
+  {s:4609.60, e:DURATION, type:'meditation', label:'Peaceful return', prompt:'Rest in the lingering peace'}
+];
+const RING_LEN = 2 * Math.PI * 212;
+// Measured by autocorrelation: 5.71 s per breath (~10.5/min), identical in
+// all 8 rounds, and exactly 8 beats of the 83.4 bpm grid.
+const BREATH_CYCLE = 5.71;
+
+function fmt(sec) {
+  sec = Math.max(0, Math.round(sec));
+  const m = Math.floor(sec / 60), s = sec % 60;
+  return m + ':' + String(s).padStart(2, '0');
+}
+
+let segEls = [];
+const segments = document.getElementById('segments');
+
+function buildSegments() {
+  segments.innerHTML = '';
+  segEls = [];
+  for (const p of PHASES) {
+    const seg = document.createElement('div');
+    seg.className = 'seg';
+    seg.style.flexGrow = (p.e - p.s);
+    const base = document.createElement('div');
+    base.className = 'base';
+    base.style.background = COLORS[p.type];
+    const fill = document.createElement('div');
+    fill.className = 'fill';
+    fill.style.background = COLORS[p.type];
+    seg.appendChild(base); seg.appendChild(fill);
+    segments.appendChild(seg);
+    segEls.push(fill);
+  }
+  document.getElementById('total').textContent = fmt(DURATION);
+}
+buildSegments();
+
+window.setPhases = function (phases, duration) {
+  PHASES = phases;
+  DURATION = duration != null ? duration : phases[phases.length - 1].e;
+  buildSegments();
+  seek(0);
+};
+
+window.seek = function (t) {
+  t = Math.min(Math.max(t, 0), DURATION);
+  let idx = PHASES.findIndex(p => t >= p.s && t < p.e);
+  if (idx === -1) idx = PHASES.length - 1;
+  const p = PHASES[idx];
+  const phaseDur = p.e - p.s;
+  const inPhase = t - p.s;
+  const accent = COLORS[p.type];
+
+  document.getElementById('phaseLabel').textContent = p.label;
+  document.getElementById('countdown').textContent = fmt(phaseDur - inPhase);
+  document.getElementById('countdown').style.color = accent;
+  document.getElementById('phaseTotal').textContent = 'of ' + fmt(phaseDur);
+  document.getElementById('prompt').textContent = p.prompt;
+  const ring = document.getElementById('ringFill');
+  ring.setAttribute('stroke', accent);
+  ring.setAttribute('stroke-dashoffset', RING_LEN * (1 - inPhase / phaseDur));
+
+  const dot = document.getElementById('pacerDot');
+  const rate = document.getElementById('breathRate');
+  if (p.type === 'breathing') {
+    const ang = ((inPhase % BREATH_CYCLE) / BREATH_CYCLE) * 2 * Math.PI - Math.PI / 2;
+    dot.setAttribute('cx', (230 + 212 * Math.cos(ang)).toFixed(2));
+    dot.setAttribute('cy', (230 + 212 * Math.sin(ang)).toFixed(2));
+    dot.setAttribute('fill', accent);
+    dot.classList.add('on');
+    rate.textContent = '≈ 10.5 breaths / min · 5.7 s cycle';
+  } else {
+    dot.classList.remove('on');
+    rate.textContent = '';
+  }
+
+  const nxt = PHASES[idx + 1];
+  document.getElementById('next').textContent =
+    nxt ? 'Next · ' + nxt.label + ' · ' + fmt(nxt.e - nxt.s) : '';
+
+  for (let i = 0; i < PHASES.length; i++) {
+    const q = PHASES[i];
+    segEls[i].style.width =
+      t >= q.e ? '100%' : t <= q.s ? '0%' : ((t - q.s) / (q.e - q.s) * 100) + '%';
+  }
+  document.getElementById('elapsed').textContent = fmt(t);
+};
+seek(0);
+</script>
+</body>
+</html>
