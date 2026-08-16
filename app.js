@@ -3,7 +3,6 @@
 // past plans get copied into events/<date>/ and archived rather than renamed.
 const MARKDOWN_FILE = 'session-plan.md';
 const DEFAULT_VIDEO_ID = 'JpWHmFQvNR8'; // Nicola Cruz – Cumbia del Olvido (ZZK Records)
-const DRAFT_KEY = 'circling-plan-draft';
 
 /* ---------- Helpers ---------- */
 const $ = (sel) => document.querySelector(sel);
@@ -22,8 +21,8 @@ function fmtTime(sec) {
 }
 
 /* ---------- Render markdown ---------- */
-// publishedMd is whatever session-plan.md holds on the server. currentMd is
-// what's on screen, which differs only while a local draft is in play.
+// The plan is read straight from session-plan.md; it is the single source for
+// both the timings and the prose on this page.
 let publishedMd = '';
 let currentMd = '';
 
@@ -43,6 +42,7 @@ function render(md) {
     t.parentNode.insertBefore(wrap, t);
     wrap.appendChild(t);
   });
+  enhance(content);
   buildTOC(content);
 }
 
@@ -57,15 +57,49 @@ async function loadContent() {
     fetchErr = err;
   }
 
-  const draft = localStorage.getItem(DRAFT_KEY);
-  currentMd = draft !== null ? draft : publishedMd;
+  currentMd = publishedMd;
 
   if (!currentMd) {
     content.innerHTML = `<p class="loading">Could not load the plan (${fetchErr ? fetchErr.message : 'empty'}).</p>`;
     return;
   }
   render(currentMd);
-  Editor.updateFlag();
+}
+
+
+// Give the rendered markdown the same structure program.html had, so it can be
+// styled as a designed read rather than a wall of text.
+function enhance(content) {
+  // Numbered principle paragraphs ("**1. ...**") become cards.
+  content.querySelectorAll('p > strong:first-child').forEach((s) => {
+    if (!/^\d+\.\s/.test(s.textContent)) return;
+    const p = s.parentElement;
+    p.classList.add('principle');
+    const n = document.createElement('span');
+    n.className = 'principle-num';
+    n.textContent = s.textContent.match(/^(\d+)\./)[1];
+    p.insertBefore(n, p.firstChild);
+    s.classList.add('principle-title');
+    s.textContent = s.textContent.replace(/^\d+\.\s*/, '');
+  });
+
+  // The run of show is the one table; give it timeline treatment.
+  const table = content.querySelector('table');
+  if (table) {
+    table.classList.add('runsheet');
+    table.closest('.table-wrap')?.classList.add('runsheet-wrap');
+  }
+
+  // Each "### Beat (n min)" heading gets its duration pulled out as a chip.
+  content.querySelectorAll('h3').forEach((h) => {
+    const m = h.textContent.match(/^(.*?)\s*\((\d+)\s*min\)\s*$/);
+    if (!m) return;
+    h.textContent = m[1];
+    const chip = document.createElement('span');
+    chip.className = 'beat-min';
+    chip.textContent = m[2] + ' min';
+    h.appendChild(chip);
+  });
 }
 
 function buildTOC(content) {
@@ -282,125 +316,6 @@ const Music = (() => {
   return { init };
 })();
 
-/* ---------- Editor (prototype) ----------
- *
- * A page can't write to itself on a static host, so "self-editing" splits into
- * two honest halves:
- *
- *   1. Local draft. Edits go to localStorage and survive reload, on this device
- *      and this browser only. Good for tweaking on the day. Diana won't see it.
- *   2. Writing the actual file. The File System Access API can, once you pick
- *      session-plan.md from your clone, write straight back into it. Chromium
- *      desktop only. It reaches Diana when you commit and push.
- *
- * Everywhere else, Download gives you the .md to drop into the repo by hand.
- */
-const Editor = (() => {
-  const el = $('#editor');
-  const text = $('#edText');
-  const status = $('#edStatus');
-  const flag = $('#editedFlag');
-  const canPickFiles = typeof window.showOpenFilePicker === 'function';
-  let fileHandle = null;
-
-  function say(msg) { status.textContent = msg; }
-
-  function updateFlag() {
-    const draft = localStorage.getItem(DRAFT_KEY);
-    flag.classList.toggle('show', draft !== null && draft !== publishedMd);
-  }
-
-  function open() {
-    text.value = currentMd;
-    el.classList.add('open');
-    el.setAttribute('aria-hidden', 'false');
-    say(fileHandle
-      ? `Bound to ${fileHandle.name}. Save to file writes straight into it.`
-      : canPickFiles
-        ? 'Done keeps the edit on this device. Open the real file to write into session-plan.md in your clone.'
-        : 'Done keeps the edit on this device. This browser cannot write files, so use Download and drop it into the repo.');
-  }
-
-  function close() {
-    el.classList.remove('open');
-    el.setAttribute('aria-hidden', 'true');
-  }
-
-  function apply() {
-    currentMd = text.value;
-    if (currentMd === publishedMd) localStorage.removeItem(DRAFT_KEY);
-    else localStorage.setItem(DRAFT_KEY, currentMd);
-    render(currentMd);
-    updateFlag();
-    close();
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  }
-
-  function revert() {
-    localStorage.removeItem(DRAFT_KEY);
-    currentMd = publishedMd;
-    render(currentMd);
-    updateFlag();
-  }
-
-  function download() {
-    const url = URL.createObjectURL(new Blob([text.value], { type: 'text/markdown' }));
-    const a = document.createElement('a');
-    a.href = url;
-    a.download = MARKDOWN_FILE;
-    a.click();
-    URL.revokeObjectURL(url);
-    say('Downloaded. Replace session-plan.md in the repo with it, then commit.');
-  }
-
-  async function openFile() {
-    try {
-      [fileHandle] = await window.showOpenFilePicker({
-        suggestedName: MARKDOWN_FILE,
-        types: [{ description: 'Markdown', accept: { 'text/markdown': ['.md'] } }]
-      });
-      text.value = await (await fileHandle.getFile()).text();
-      say(`Bound to ${fileHandle.name}. Save to file now writes straight into it.`);
-    } catch (err) {
-      if (err.name !== 'AbortError') say('Could not open that file: ' + err.message);
-    }
-  }
-
-  async function saveFile() {
-    if (!canPickFiles) return download();
-    try {
-      if (!fileHandle) {
-        fileHandle = await window.showSaveFilePicker({
-          suggestedName: MARKDOWN_FILE,
-          types: [{ description: 'Markdown', accept: { 'text/markdown': ['.md'] } }]
-        });
-      }
-      const w = await fileHandle.createWritable();
-      await w.write(text.value);
-      await w.close();
-      say(`Written to ${fileHandle.name}. Commit and push for it to reach the live site.`);
-    } catch (err) {
-      if (err.name !== 'AbortError') say('Could not save: ' + err.message);
-    }
-  }
-
-  function init() {
-    $('#editBtn').addEventListener('click', open);
-    $('#edApply').addEventListener('click', apply);
-    $('#edCancel').addEventListener('click', close);
-    $('#edDownload').addEventListener('click', download);
-    $('#edSaveFile').addEventListener('click', saveFile);
-    $('#edOpenFile').addEventListener('click', openFile);
-    $('#revertBtn').addEventListener('click', revert);
-    if (!canPickFiles) {
-      $('#edOpenFile').disabled = true;
-      $('#edSaveFile').textContent = 'Download';
-    }
-  }
-
-  return { init, updateFlag };
-})();
-
 /* ---------- Dock / Panels ---------- */
 function initDock() {
   const scrim = $('#scrim');
@@ -429,7 +344,6 @@ function initDock() {
 }
 
 /* ---------- Boot ---------- */
-Editor.init();
 loadContent();
 startClock();
 Timer.init();
