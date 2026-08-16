@@ -316,6 +316,54 @@ const Music = (() => {
   return { init };
 })();
 
+
+/* ---------- Breathwork video ---------- */
+// Seeking needs the server to answer Range requests. GitHub Pages does;
+// `python3 -m http.server` does not, which is what ./serve.py is for.
+const BreathVideo = (() => {
+  const v = $('#breathVideo');
+  if (!v) return { init() {} };
+  const seek = $('#vidSeek'), cur = $('#vidCur'), dur = $('#vidDur'), play = $('#vidPlay');
+  let scrubbing = false;
+
+  const jump = (d) => {
+    if (!isFinite(v.duration)) return;
+    v.currentTime = Math.min(Math.max(v.currentTime + d, 0), v.duration - 0.1);
+  };
+
+  function init() {
+    v.addEventListener('loadedmetadata', () => {
+      seek.max = v.duration;
+      dur.textContent = fmtTime(v.duration);
+    });
+    v.addEventListener('timeupdate', () => {
+      if (scrubbing) return;
+      seek.value = v.currentTime;
+      cur.textContent = fmtTime(v.currentTime);
+    });
+    v.addEventListener('play', () => { play.textContent = '⏸'; });
+    v.addEventListener('pause', () => { play.textContent = '▶'; });
+
+    seek.addEventListener('input', () => {
+      scrubbing = true;
+      cur.textContent = fmtTime(parseFloat(seek.value));
+    });
+    seek.addEventListener('change', () => {
+      v.currentTime = parseFloat(seek.value);
+      scrubbing = false;
+    });
+
+    play.addEventListener('click', () => (v.paused ? v.play() : v.pause()));
+    $('#vidBack').addEventListener('click', () => jump(-15));
+    $('#vidFwd').addEventListener('click', () => jump(15));
+    $('#vidStart').addEventListener('click', () => { v.currentTime = 0; });
+    $('#vidEnd').addEventListener('click', () => {
+      if (isFinite(v.duration)) v.currentTime = Math.max(v.duration - 60, 0);
+    });
+  }
+  return { init };
+})();
+
 /* ---------- Dock / Panels ---------- */
 function initDock() {
   const scrim = $('#scrim');
@@ -348,4 +396,5 @@ loadContent();
 startClock();
 Timer.init();
 Music.init();
+BreathVideo.init();
 initDock();

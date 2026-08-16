@@ -80,11 +80,20 @@
       <button class="panel-close" data-close="breath" aria-label="Close">✕</button>
     </div>
     <div class="breath-track">
-      <div class="track-name">Guided video</div>
-      <video id="breathVideo" src="video/breathwork-13.mp4" preload="none"
-        controls playsinline poster=""></video>
-      <div class="track-name">Audio only</div>
-      <audio id="breathAudio" src="audio/breathing-13-music.mp3" preload="none" controls></audio>
+      <video id="breathVideo" src="video/breathwork-13.mp4" preload="metadata"
+        controls playsinline></video>
+      <div class="vid-controls">
+        <button class="vid-btn" id="vidStart" aria-label="Back to start">⏮</button>
+        <button class="vid-btn" id="vidBack" aria-label="Back 15 seconds">−15s</button>
+        <button class="vid-btn primary" id="vidPlay" aria-label="Play or pause">▶</button>
+        <button class="vid-btn" id="vidFwd" aria-label="Forward 15 seconds">+15s</button>
+        <button class="vid-btn" id="vidEnd" aria-label="Jump to the last minute">⏭</button>
+      </div>
+      <div class="vid-seek-row">
+        <span class="seek-time" id="vidCur">0:00</span>
+        <input type="range" id="vidSeek" min="0" max="100" value="0" step="0.1" aria-label="Seek video" />
+        <span class="seek-time" id="vidDur">0:00</span>
+      </div>
     </div>
     <p class="breath-note">10:38 · 3 rounds of 21 breaths · holds 1:11, 1:13, 1:13</p>
   </section>

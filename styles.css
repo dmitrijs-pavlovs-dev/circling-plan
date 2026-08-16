@@ -340,6 +340,26 @@ body {
   width: 100%; display: block; border-radius: 8px;
   background: #000; aspect-ratio: 16 / 9;
 }
+/* Extra transport controls. The native scrubber only works when the server
+   answers Range requests, and these give coarse jumps regardless. */
+.vid-controls {
+  display: flex; gap: 8px; margin-top: 12px;
+}
+.vid-btn {
+  flex: 1; padding: 12px 6px; min-height: 48px;
+  border: 1px solid var(--line); border-radius: 10px;
+  background: var(--bg); color: var(--ink);
+  font-family: inherit; font-size: 0.82rem; font-weight: 600;
+  font-variant-numeric: tabular-nums; cursor: pointer;
+}
+.vid-btn.primary {
+  background: var(--accent); color: var(--on-accent); border-color: var(--accent);
+  font-size: 1rem;
+}
+.vid-btn:active { transform: scale(0.97); }
+.vid-seek-row {
+  display: flex; align-items: center; gap: 10px; margin-top: 12px;
+}
 .breath-note { margin-top: 14px; color: var(--ink-soft); font-size: 0.8rem; text-align: center; }
 .track-name { text-align: center; color: var(--ink-soft); margin-bottom: 10px; font-size: 0.9rem; font-style: italic; }
 #player { width: 100%; aspect-ratio: 16 / 9; border-radius: 8px; overflow: hidden; background: #000; margin-bottom: 12px; }
