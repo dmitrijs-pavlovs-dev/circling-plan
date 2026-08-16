@@ -151,8 +151,9 @@ const RING_LEN = 2 * Math.PI * 212;
 // Measured by autocorrelation: 5.71 s per breath (~10.5/min), identical in
 // all 8 rounds, and exactly 8 beats of the 83.4 bpm grid.
 const BREATH_CYCLE = 5.712;
-// Source describes a 3-part breath: 2 parts inhale, 1 part relaxed exhale.
-const INHALE_FRAC = 2 / 3;
+// The source describes a 2:1 inhale-to-exhale breath, but an uneven pacer is
+// hard to follow, so the animation splits the cycle evenly.
+const INHALE_FRAC = 0.5;
 const R_MIN = 62, R_MAX = 196;   // orb radius inside the 212 progress ring
 
 function fmt(sec) {
