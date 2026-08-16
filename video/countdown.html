@@ -218,26 +218,27 @@ window.seek = function (t) {
     // slows at the turnaround instead of snapping direction.
     const ph = (inPhase % BREATH_CYCLE) / BREATH_CYCLE;
     const ease = (x) => 0.5 - 0.5 * Math.cos(Math.PI * Math.min(Math.max(x, 0), 1));
-    let scale, label, remain;
+    let scale, label;
     if (ph < INHALE_FRAC) {
       const u = ph / INHALE_FRAC;
       scale = R_MIN + (R_MAX - R_MIN) * ease(u);
       label = 'Breathe in';
-      remain = (INHALE_FRAC - ph) * BREATH_CYCLE;
     } else {
       const u = (ph - INHALE_FRAC) / (1 - INHALE_FRAC);
       scale = R_MAX - (R_MAX - R_MIN) * ease(u);
       label = 'Breathe out';
-      remain = (1 - ph) * BREATH_CYCLE;
     }
+    // breaths remaining in this round, counting the one in progress
+    const totalBreaths = Math.round(phaseDur / BREATH_CYCLE);
+    const left = Math.max(1, totalBreaths - Math.floor(inPhase / BREATH_CYCLE));
+    const leftText = left === 1 ? 'last breath' : left + ' breaths left';
     orb.setAttribute('r', scale.toFixed(2));
     edge.setAttribute('r', scale.toFixed(2));
     orb.setAttribute('fill', accent);
     edge.setAttribute('stroke', accent);
     orb.classList.add('on'); edge.classList.add('on');
     cue.style.color = accent;
-    cue.innerHTML = label +
-      '<span class="sub">' + remain.toFixed(1) + ' s</span>';
+    cue.innerHTML = label + '<span class="sub">' + leftText + '</span>';
   } else {
     orb.classList.remove('on'); edge.classList.remove('on');
     cue.textContent = '';
